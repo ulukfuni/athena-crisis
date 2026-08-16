@@ -42,13 +42,13 @@ const getAlert = (error: Error) => {
       text: (
         <span>
           <fbt desc="Error message description">
-            There was an error preparing the assets for Athena Crisis on your platform. For now,
+            There was an error preparing the assets on your platform. For now,
             please <a href={route}>download the app</a>
-            or use Chrome or Safari to play Athena Crisis.
+            or use Chrome or Safari to play.
           </fbt>
         </span>
       ),
-      title: fbt('Failed to load Athena Crisis', 'Error message headline'),
+      title: fbt('Failed to load game', 'Error message headline'),
     } as const;
   }
 
@@ -61,7 +61,7 @@ const getAlert = (error: Error) => {
         <Stack alignCenter between gap={16} wrap>
           <Stack between flex1 wrap>
             <fbt desc="Error message description">
-              Athena Crisis is currently undergoing maintenance. Please try again later.
+              The game is currently undergoing maintenance. Please try again later.
             </fbt>
           </Stack>
           <img alt="Maxima" className={pixelatedStyle} src="/Maxima.gif" />

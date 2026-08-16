@@ -28,7 +28,7 @@ export default function NewVersionNotification({
       (event) => {
         if (hasNewAppVersion && !hideNotification) {
           event.preventDefault();
-          window.open('https://app.athenacrisis.com/download', target);
+          window.open('/download', target);
         }
       },
       [hasNewAppVersion, hideNotification],
@@ -68,9 +68,9 @@ export default function NewVersionNotification({
             </h2>
             <p>
               <fbt desc="New native app version notification">
-                A new version of the Athena Crisis App is available. Tap here to{' '}
+                A new version of the app is available. Tap here to{' '}
                 <a
-                  href="https://app.athenacrisis.com/download"
+                  href="/download"
                   onClick={() => setHideNotification(true)}
                   target={target}
                   {...linkProps}
@@ -86,7 +86,7 @@ export default function NewVersionNotification({
       {hasNewVersion && (
         <Notification delay={2000}>
           <p>
-            <fbt desc="New version notification">Athena Crisis was updated.</fbt>{' '}
+            <fbt desc="New version notification">The app was updated.</fbt>{' '}
             <Reload reload={reload} />
           </p>
         </Notification>

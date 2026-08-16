@@ -4,7 +4,6 @@ const FactionNames = [
   'Apollo',
   'Ares',
   'Artemis',
-  'Athena',
   'Atlas',
   'Ceres',
   'Dionysus',

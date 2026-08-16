@@ -13,7 +13,7 @@ export const metadata: MapMetadata = {
           actions: [
             CharacterMessage(1, 'Phew, that was a close call.', 'self', 2),
             CharacterMessage(5, "All troops retreat. We'll be back soon enough!", 'opponent', 2),
-            CharacterMessage(15, 'Athena Crisis is fun! FIRE!', 'self', 2),
+            CharacterMessage(15, 'This is fun! FIRE!', 'self', 2),
             CharacterMessage(
               3,
               'If you enjoyed this, there is a lot more where this came from!',

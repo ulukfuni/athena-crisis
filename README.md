@@ -1,20 +1,12 @@
-# Athena Crisis
+# Turn-Based Strategy Game
 
-<p align="center">
-  <a href="https://athenacrisis.com">
-    <img alt="Athena Crisis Logo" src="./docs/content/public/athena-crisis.svg" style="width: 70%;" />
-  </a>
-</p>
+This project is a custom turn-based strategy game built on top of the open-source [Athena Crisis](https://athenacrisis.com) game engine, developed by [Nakazawa Tech](https://nakazawa.tech).
 
-[Athena Crisis](https://athenacrisis.com) is an Open Core video game developed by [Nakazawa Tech](https://nakazawa.tech). The source code in this repository is licensed under the [MIT License](./LICENSE.md) and can be used to improve Athena Crisis, build additional tools, study game development with JavaScript or create entirely new turn-based strategy games.
+The underlying engine and associated libraries in this repository are licensed under the [MIT License](./LICENSE.md).
 
-The single-player campaign, multiplayer, art, music, and content are not open source. You can try a demo at [athenacrisis.com](https://athenacrisis.com) and you can [wishlist or purchase Athena Crisis on Steam](https://store.steampowered.com/app/2456430/Athena_Crisis/) or [buy Athena Crisis directly](https://app.athenacrisis.com/checkout) to experience the full game.
+## Architecture
 
-If you like Athena Crisis, [please consider a sponsorship to support its development](https://github.com/sponsors/cpojer).
-
-<a href="https://athenacrisis.com">
-  <img alt="Athena Crisis Gameplay" src="https://github.com/nkzw-tech/athena-crisis/assets/13352/800717e7-fda9-4265-9e0f-25c6c99326ce">
-</a>
+This project vendors and utilizes the Athena Crisis core packages (`athena`, `apollo`, `hera`, `dionysus`, etc.) as its game engine and strategy game library while utilizing custom game assets, faction rosters, and units.
 
 ## Setup
 

@@ -533,7 +533,7 @@ export default function ObjectiveCard({
                         <fbt:param name="tag">
                           <Tag tag="reward" />
                         </fbt:param>{' '}
-                        tag which can only be added by an Athena Crisis admin.
+                        tag which can only be added by an admin.
                       </fbt>
                     )}
                   </p>

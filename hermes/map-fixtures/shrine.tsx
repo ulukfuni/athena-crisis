@@ -46,7 +46,7 @@ export const metadata: MapMetadata = {
           actions: [
             CharacterMessage(
               1,
-              "Hello there! I'm {name}. This is the Prequel Campaign. I was told nothing that happens here has an impact on the Athena Crisis. Or.. does it?",
+              "Hello there! I'm {name}. This is the Prequel Campaign. I was told nothing that happens here has an impact on the crisis. Or.. does it?",
               'self',
               2,
             ),

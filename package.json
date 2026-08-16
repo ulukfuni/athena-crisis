@@ -1,12 +1,7 @@
 {
-  "name": "@deities/athena-crisis",
+  "name": "custom-game",
   "version": "1.0.0",
   "private": true,
-  "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/nkzw-tech/athena-crisis.git"
-  },
   "type": "module",
   "scripts": {
     "ac": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm --env-file ./artemis/.env ./artemis/scripts/ac.tsx",
