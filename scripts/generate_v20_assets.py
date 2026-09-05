@@ -575,14 +575,14 @@ def generate_unit_sheet(kind: str, player: int) -> Image.Image:
             draw_fn(img, f, up_y if kind == "SmallTank" else base_y + 4, colors, "idle", f)
             draw_fn(img, f + 8, up_y if kind == "SmallTank" else base_y + 4, colors, "idle", 0)
 
-    # Explosion strip for infantry/pioneer at (7,1) × 8 frames (cols 7..14, row 1)
+    # Explosion strip for infantry/pioneer at (8,1) × 8 frames (cols 8..15, row 1)
+    # Starts at col 8 so attack-stance frames on cols 0..7 are not overwritten.
     if kind in ("Infantry", "Pioneer"):
         for f in range(8):
-            # clear then draw explosion (overwrite unit art in those cells)
-            x0, y0 = (7 + f) * UNIT, 1 * UNIT
+            x0, y0 = (8 + f) * UNIT, 1 * UNIT
             patch = new_rgba(UNIT, UNIT)
             img.paste(patch, (x0, y0))
-            draw_explosion_cell(img, 7 + f, 1, f)
+            draw_explosion_cell(img, 8 + f, 1, f)
 
     return img
 
@@ -698,6 +698,174 @@ def generate_explosion() -> Image.Image:
     return img
 
 
+
+# ---------------------------------------------------------------------------
+# Attack VFX — vertical strips matching WeaponAnimation size/frames/cell.
+# Animation.tsx: viewport = size×size; frames shift backgroundPositionY by -i*size;
+# cell shifts backgroundPositionX by -cell*size. Empty is intentionally blank.
+# ---------------------------------------------------------------------------
+
+# sprite -> (size, frames, cels) aggregated from athena/info/Unit.tsx WeaponAnimation
+ATTACK_SHEETS = {
+    "Acid": (36, 11, 1),
+    "AcidCloud": (36, 8, 1),
+    "Amphibious": (32, 15, 1),
+    "AntiAir": (24, 8, 1),
+    "Artillery": (32, 9, 1),
+    "Bite": (64, 9, 1),
+    "Bomb": (24, 9, 1),
+    "Cannon": (80, 14, 1),
+    "Empty": (32, 16, 1),  # timing-only; fully transparent
+    "ExplosionImpact": (48, 10, 1),
+    "Flamethrower": (32, 24, 2),
+    "Flask": (48, 20, 1),
+    "FlaskExplosion": (32, 8, 1),
+    "HeavyArtillery": (32, 12, 1),
+    "LightGun": (36, 13, 1),
+    "MG": (32, 8, 1),
+    "Minigun": (32, 11, 1),
+    "Pistol": (32, 10, 1),
+    "Pow": (64, 7, 1),
+    "Punch": (42, 11, 1),
+    "Railgun": (48, 23, 1),
+    "RailgunImpact": (64, 16, 1),
+    "Rocket": (64, 16, 1),
+    "RocketLauncher": (32, 11, 1),
+    "Rockets": (48, 9, 1),
+    "SAM": (32, 12, 1),
+    "SAMImpact": (42, 12, 1),
+    "Shotgun": (32, 17, 1),
+    "Smoke": (40, 9, 1),
+    "SniperRifle": (32, 14, 1),
+    "Spark": (32, 11, 1),
+    "SparkMini": (32, 9, 1),
+    "Torpedo": (32, 14, 2),
+}
+
+
+def _attack_palette(style: str, t: float, cel: int = 0):
+    """Crimson/orange geometric flash — original, not AC art."""
+    # Early frames bright muzzle; mid orange; late crimson fade
+    if style == "smoke":
+        a = int(180 * (1 - t))
+        g = int(160 + 40 * (1 - t))
+        return (g, g, g, a)
+    if style == "spark":
+        a = int(255 * (1 - t * 0.85))
+        return (255, int(220 - 100 * t), int(80 + 40 * t), a)
+    if style == "impact":
+        a = int(255 * (1 - t * 0.7))
+        return (255, int(120 + 80 * (1 - t)), int(30 + 20 * (1 - t)), a)
+    if style == "flame":
+        # cel 0 = core, cel 1 = outer tongue
+        a = int((220 if cel == 0 else 160) * (1 - t * 0.6))
+        return (255, int(160 - 40 * cel - 60 * t), int(40 + 20 * cel), a)
+    # default muzzle / burst
+    a = int(255 * (1 - t * 0.75))
+    return (220, int(40 + 100 * (1 - t)), int(28 + 20 * (1 - t)), a)
+
+
+def _attack_style_for(name: str) -> str:
+    n = name.lower()
+    if name == "Empty":
+        return "empty"
+    if "smoke" in n or "cloud" in n:
+        return "smoke"
+    if "spark" in n or name in ("Pow", "Punch", "Bite"):
+        return "spark"
+    if "impact" in n or "explosion" in n or name in ("Bomb", "FlaskExplosion"):
+        return "impact"
+    if "flame" in n:
+        return "flame"
+    return "muzzle"
+
+
+def draw_attack_frame(d: ImageDraw.ImageDraw, x0: int, y0: int, cell: int, f: int, frames: int, style: str, cel: int = 0):
+    if style == "empty":
+        return
+    t = f / max(frames - 1, 1)
+    cx, cy = x0 + cell // 2, y0 + cell // 2
+    color = _attack_palette(style, t, cel)
+    # Expand then contract: peak mid-early
+    peak = 0.35
+    grow = 1 - abs(t - peak) / max(peak, 1 - peak)
+    grow = max(0.15, grow)
+    r = max(2, int((cell * 0.12) + grow * (cell * 0.32)))
+
+    if style == "muzzle":
+        # horizontal-ish muzzle flash (animation rotates for direction)
+        hw = max(2, int(r * 1.4))
+        hh = max(1, int(r * 0.55))
+        d.ellipse([cx - hw, cy - hh, cx + hw, cy + hh], fill=color)
+        core = (255, 240, 180, color[3])
+        d.ellipse([cx - hw // 2, cy - hh // 2, cx + hw // 2, cy + hh // 2], fill=core)
+        # pixel sparks
+        for k in range(4):
+            ang = k * math.pi / 2 + t * 3
+            sx = int(cx + math.cos(ang) * (hw + 2))
+            sy = int(cy + math.sin(ang) * (hh + 2))
+            d.point((sx, sy), fill=(255, 200, 80, color[3]))
+    elif style == "impact":
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color)
+        if f < frames * 0.6:
+            d.ellipse([cx - r // 3, cy - r // 3, cx + r // 3, cy + r // 3], fill=(255, 255, 200, color[3]))
+        # cross burst
+        arm = max(2, r // 2)
+        d.rectangle([cx - 1, cy - arm, cx + 1, cy + arm], fill=(255, 180, 60, color[3]))
+        d.rectangle([cx - arm, cy - 1, cx + arm, cy + 1], fill=(255, 180, 60, color[3]))
+    elif style == "spark":
+        for k in range(6):
+            ang = k * math.pi / 3 + t * 2
+            length = int(r * (0.6 + 0.4 * grow))
+            sx = int(cx + math.cos(ang) * length)
+            sy = int(cy + math.sin(ang) * length)
+            d.line([cx, cy, sx, sy], fill=color, width=max(1, cell // 16))
+        d.ellipse([cx - 2, cy - 2, cx + 2, cy + 2], fill=(255, 255, 220, color[3]))
+    elif style == "flame":
+        # tongue extending rightward (cel 1 longer)
+        length = int(r * (1.2 + 0.8 * cel) * grow)
+        height = max(2, int(r * 0.7))
+        d.ellipse([cx - 2, cy - height, cx + length, cy + height], fill=color)
+        d.ellipse([cx - 1, cy - height // 2, cx + length // 2, cy + height // 2], fill=(255, 240, 120, color[3]))
+    elif style == "smoke":
+        for i, off in enumerate(((-2, -1), (2, 1), (0, -3))):
+            rr = max(2, int(r * (0.7 + 0.2 * i) * (1 - t * 0.3)))
+            d.ellipse(
+                [cx + off[0] - rr, cy + off[1] - rr - int(t * 4), cx + off[0] + rr, cy + off[1] + rr - int(t * 4)],
+                fill=color,
+            )
+
+
+def generate_attack_sheet(name: str, size: int, frames: int, cels: int = 1) -> Image.Image:
+    img = new_rgba(size * cels, size * frames)
+    d = ImageDraw.Draw(img)
+    style = _attack_style_for(name)
+    for cel in range(cels):
+        for f in range(frames):
+            draw_attack_frame(d, cel * size, f * size, size, f, frames, style, cel)
+    return img
+
+
+def generate_attack_octopus(player: int) -> Image.Image:
+    # AttackOctopus WeaponAnimation: size 32, frames 16
+    size, frames = 32, 16
+    img = new_rgba(size, size * frames)
+    d = ImageDraw.Draw(img)
+    colors = PLAYER.get(player, PLAYER[0])
+    for f in range(frames):
+        y = f * size
+        t = f / max(frames - 1, 1)
+        cx, cy = size // 2, y + size // 2
+        # geometric tentacle whip / bite flash in player tint + crimson
+        r = int(4 + abs(0.4 - t) * 20)
+        whip = colors["main"] + (int(230 * (1 - t * 0.5)),)
+        d.ellipse([cx - r, cy - r // 2, cx + r + int(6 * (1 - t)), cy + r // 2], fill=whip)
+        d.ellipse([cx - 2, cy - 2, cx + 2, cy + 2], fill=colors["accent"] + (255,))
+        if f < 10:
+            d.rectangle([cx + r // 2, cy - 1, cx + r + 4, cy + 1], fill=(220, 40, 40, 200))
+    return img
+
+
 def generate_heal() -> Image.Image:
     return generate_effect_strip(36, 18, "heal")
 
@@ -762,6 +930,15 @@ def main():
     # SmallTank has no ShadowImages entry — skip
     written.append(save(generate_cursor(), "assets/Cursor.png"))
     written.append(save(generate_explosion(), "assets/Explosion.png"))
+    # Attack sheets — must match WeaponAnimation size/frames/cell
+    for name, (size, frames, cels) in ATTACK_SHEETS.items():
+        written.append(save(generate_attack_sheet(name, size, frames, cels), f"assets/Attack{name}.png"))
+    for p in range(0, 9):
+        written.append(save(generate_attack_octopus(p if p in PLAYER else 0), f"AttackOctopus-{p}.png"))
+        # waterSwap biome variants (Biomes 0..6 present as stubs)
+        for b in range(0, 7):
+            written.append(save(generate_attack_octopus(p if p in PLAYER else 0), f"AttackOctopus-{p}-{b}.png"))
+
     written.append(save(generate_heal(), "assets/Heal.png"))
     written.append(save(generate_damage(), "assets/Damage.png"))
     written.append(save(generate_spawn(1), "Spawn-1.png"))

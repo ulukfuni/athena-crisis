@@ -303,7 +303,7 @@ const attackFlashStyle = css`
   }
   50% {
     filter: saturate(0.5);
-    opacity: 0.5;
+    opacity: 1;
   }
   66% {
     ${vars.set('skew', '-2.5deg')}

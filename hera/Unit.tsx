@@ -1272,7 +1272,7 @@ const attackFlashStyle = {
     }
     20%, 90% {
       ${vars.set('saturation', 0.5)}
-      opacity: 0.3;
+      opacity: 1;
       transform: ${scale} translate3d(0, -3px, 0);
     }
   `),
@@ -1283,7 +1283,7 @@ const attackFlashStyle = {
     }
     20%, 90% {
       ${vars.set('saturation', 0.5)}
-      opacity: 0.3;
+      opacity: 1;
       transform: ${scale} translate3d(3px, 0, 0);
     }
   `),
@@ -1294,7 +1294,7 @@ const attackFlashStyle = {
       }
       20%, 90% {
         ${vars.set('saturation', 0.5)}
-        opacity: 0.3;
+        opacity: 1;
         transform: ${scale} translate3d(-3px, 0, 0);
     }
   `),
@@ -1305,7 +1305,7 @@ const attackFlashStyle = {
     }
     20%, 90% {
       ${vars.set('saturation', 0.5)}
-      opacity: 0.3;
+      opacity: 1;
       transform: ${scale} translate3d(0, 3px, 0);
     }
   `),
@@ -1317,7 +1317,7 @@ const flashStyle = getAttackFlashAnimation(keyframes`
   }
   20%, 90% {
     ${vars.set('saturation', 0.5)}
-    opacity: 0.3;
+    opacity: 1;
   }
 `);
 

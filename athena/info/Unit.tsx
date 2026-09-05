@@ -1750,7 +1750,7 @@ export const Pioneer = new UnitInfo(
     explosionSprite: {
       frames: 8,
       offset: { y: 1 },
-      position: sprite(7, 1),
+      position: sprite(8, 1),
     },
     name: 'Units-Pioneer',
     portrait: {
@@ -1786,7 +1786,7 @@ export const Infantry = new UnitInfo(
     explosionSprite: {
       frames: 8,
       offset: { y: 1 },
-      position: sprite(7, 1),
+      position: sprite(8, 1),
     },
     name: 'Units-Infantry',
     portrait: {
