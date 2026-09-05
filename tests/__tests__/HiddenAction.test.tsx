@@ -150,7 +150,7 @@ test('create building and create unit actions', async () => {
     CreateBuilding (5,4) { building: House { id: 2, health: 100, player: 2, completed: true }, free: null }
     CompleteUnit (1,1)
     CreateBuilding (4,5) { building: House { id: 2, health: 100, player: 2, completed: true }, free: null }
-    CreateUnit (5,5 → 5,5) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (5,5 → 5,5) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 200, player: 2 }, next: { funds: 500, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
   expect(snapshotEncodedActionResponse(gameActionResponse)).toMatchInlineSnapshot(`

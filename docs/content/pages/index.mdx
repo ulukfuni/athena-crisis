@@ -7,16 +7,13 @@ import { HomePage } from 'vocs';
 import ClientComponent from '../playground/ClientComponent.tsx';
 
 <HomePage.Root>
-  <a href="https://athenacrisis.com" className="LogoLink">
-    <img alt="Athena Crisis logo" src="./athena-crisis.svg" style={{ width: '80%' }} />
-  </a>
+  <HomePage.Tagline>Turn-Based Strategy Game</HomePage.Tagline>
   <HomePage.Tagline>Open Source Docs & Playground</HomePage.Tagline>
   <HomePage.Description>
     {
-      'Athena Crisis is a modern retro turn-based strategy game built from scratch with JavaScript, React and CSS.'
+      'Independent turn-based strategy game docs and playground built with JavaScript, React and CSS.'
     }
   </HomePage.Description>
-  <a href="https://cpojer.net/posts/athena-crisis-open-source">Read the announcement</a>
   <HomePage.Buttons>
     <HomePage.Button
       className="vocs:text-white! HomePageGettingStartedButton"
@@ -25,13 +22,10 @@ import ClientComponent from '../playground/ClientComponent.tsx';
     >
       Getting Started
     </HomePage.Button>
-    <HomePage.Button href="https://github.com/nkzw-tech/athena-crisis">
-      Star on GitHub
-    </HomePage.Button>
-    <HomePage.Button href="https://store.steampowered.com/app/2456430/Athena_Crisis/">
-      Athena Crisis on Steam
+    <HomePage.Button href="https://github.com/ulukfuni/athena-crisis">
+      View on GitHub
     </HomePage.Button>
   </HomePage.Buttons>
-  <HomePage.Tagline>Try a demo of Athena Crisis!</HomePage.Tagline>
+  <HomePage.Tagline>Try a local demo</HomePage.Tagline>
   <ClientComponent module="playgroundDemoGame" />
 </HomePage.Root>

@@ -179,7 +179,7 @@ test('attempt to attack new units when they are revealed after creating a unit',
   );
 
   expect(snapshotGameState(gameState)).toMatchInlineSnapshot(`
-    "CreateUnit (1,3 → 2,3) { unit: Jeep { id: 6, health: 100, player: 2, fuel: 60, moved: true, name: 'Remy', completed: true }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (1,3 → 2,3) { unit: Jeep { id: 6, health: 100, player: 2, fuel: 60, moved: true, name: 'Driver F', completed: true }, free: false, skipBehaviorRotation: false }
     AttackUnit (1,1 → 3,3) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 100, ammo: [ [ 1, 3 ] ] }, unitB: null, chargeA: 33, chargeB: 100 }
     AttackUnitGameOver { fromPlayer: 1, toPlayer: 2 }
     GameEnd { objective: null, objectiveId: null, toPlayer: 2, chaosStars: null }"
@@ -380,8 +380,8 @@ test('AI behavior from buildings carries over in a round-robin fashion', async (
   );
 
   expect(snapshotGameState(gameState)).toMatchInlineSnapshot(`
-    "CreateUnit (1,3 → 2,3) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Sam', completed: true, behavior: 1 }, free: false, skipBehaviorRotation: false }
-    CreateUnit (1,1 → 2,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Joey', completed: true, behavior: 2 }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (1,3 → 2,3) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout A', completed: true, behavior: 1 }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,1 → 2,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Heavy L', completed: true, behavior: 2 }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 250, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -397,7 +397,7 @@ test('AI behavior from buildings carries over in a round-robin fashion', async (
     "AttackUnit (2,1 → 3,3) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 100, ammo: [ [ 1, 3 ] ] }, unitB: DryUnit { health: 14, ammo: [ [ 1, 7 ] ] }, chargeA: 106, chargeB: 322 }
     Move (2,3 → 3,1) { fuel: 37, completed: null, path: [2,2 → 3,2 → 3,1], movementExhausted: null }
     CreateBuilding (3,1) { building: House { id: 2, health: 100, player: 2, completed: true }, free: null }
-    CreateUnit (1,3 → 2,3) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Sam', completed: true, behavior: 1 }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,3 → 2,3) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout A', completed: true, behavior: 1 }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 50, player: 2 }, next: { funds: 0, player: 1 }, round: 3, rotatePlayers: null, supply: null, miss: null }"
   `);
 });
@@ -426,7 +426,7 @@ test('AI behavior will not use `Stay` on units that do not have an attack', asyn
   );
 
   expect(snapshotGameState(gameState)).toMatchInlineSnapshot(`
-    "CreateUnit (1,1 → 2,1) { unit: Rocket Launcher { id: 3, health: 100, player: 2, fuel: 40, ammo: [ [ 1, 4 ] ], moved: true, name: 'Davide', completed: true, behavior: 2 }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (1,1 → 2,1) { unit: Rocket Launcher { id: 3, health: 100, player: 2, fuel: 40, ammo: [ [ 1, 4 ] ], moved: true, name: 'Gunner C', completed: true, behavior: 2 }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 700, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -446,7 +446,7 @@ test('AI behavior will not use `Stay` on units that do not have an attack', asyn
   );
 
   expect(snapshotGameState(secondGameState)).toMatchInlineSnapshot(`
-    "CreateUnit (1,1 → 2,1) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: true }
+    "CreateUnit (1,1 → 2,1) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: true }
     EndTurn { current: { funds: 0, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -478,7 +478,7 @@ test('AI will not attempt to create a unit it cannot deploy', async () => {
   );
 
   expect(snapshotGameState(gameState)).toMatchInlineSnapshot(`
-    "CreateUnit (1,1 → 1,2) { unit: Mammoth { id: 34, health: 100, player: 2, fuel: 30, ammo: [ [ 1, 6 ] ], moved: true, name: 'Shamus', completed: true }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (1,1 → 1,2) { unit: Mammoth { id: 34, health: 100, player: 2, fuel: 30, ammo: [ [ 1, 6 ] ], moved: true, name: 'Mammoth E2', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 100, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -493,7 +493,7 @@ test('AI will not attempt to create a unit it cannot deploy', async () => {
   // The AI tries to build the strongest unit (likely 'Mammoth') which requires rails, but there are none.
   // This test ensures that the AI still actually creates a unit.
   expect(snapshotGameState(secondGameState)).toMatchInlineSnapshot(`
-    "CreateUnit (1,1 → 2,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Joey', completed: true }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (1,1 → 2,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Heavy L', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 350, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 });
@@ -701,7 +701,7 @@ test('AI keeps attacking even if one unit gets blocked', async () => {
     first.type === 'Move' ? first.to === vec(1, 2) || first.to === vec(2, 1) : null,
   ).toBeTruthy();
   expect(snapshotGameState(rest)).toMatchInlineSnapshot(`
-    "CreateUnit (2,4 → 2,3) { unit: Flamethrower { id: 15, health: 100, player: 2, fuel: 30, ammo: [ [ 1, 4 ] ], moved: true, name: 'Yuki', completed: true }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (2,4 → 2,3) { unit: Flamethrower { id: 15, health: 100, player: 2, fuel: 30, ammo: [ [ 1, 4 ] ], moved: true, name: 'Flame O', completed: true }, free: false, skipBehaviorRotation: false }
     AttackUnit (5,5 → 3,3) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 1, ammo: [ [ 1, 6 ] ] }, unitB: DryUnit { health: 70 }, chargeA: 19, chargeB: 60 }
     EndTurn { current: { funds: 600, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
@@ -767,7 +767,7 @@ test('AI does not keep building naval units if the opponent does not have any na
   );
 
   expect(snapshotGameState(gameStateA)).toMatchInlineSnapshot(`
-    "CreateUnit (1,1 → 2,1) { unit: Frigate { id: 29, health: 100, player: 2, fuel: 60, ammo: [ [ 1, 8 ] ], moved: true, name: 'Thomas', completed: true }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (1,1 → 2,1) { unit: Frigate { id: 29, health: 100, player: 2, fuel: 60, ammo: [ [ 1, 8 ] ], moved: true, name: 'Frigate Z', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 400, player: 2 }, next: { funds: 800, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -780,7 +780,7 @@ test('AI does not keep building naval units if the opponent does not have any na
   );
 
   expect(snapshotGameState(gameStateB)).toMatchInlineSnapshot(`
-    "CreateUnit (3,1 → 3,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Joey', completed: true }, free: false, skipBehaviorRotation: false }
+    "CreateUnit (3,1 → 3,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Heavy L', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 150, player: 2 }, next: { funds: 800, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -795,7 +795,7 @@ test('AI does not keep building naval units if the opponent does not have any na
   expect(snapshotGameState(gameStateC)).toMatchInlineSnapshot(`
     "Move (3,3 → 1,3) { fuel: 27, completed: null, path: [2,3 → 1,3], movementExhausted: null }
     AttackUnit (1,3 → 1,2) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 100, ammo: [ [ 1, 4 ] ] }, unitB: DryUnit { health: 66, ammo: [ [ 1, 4 ] ] }, chargeA: 112, chargeB: 340 }
-    CreateUnit (3,1 → 3,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Joey', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (3,1 → 3,1) { unit: Heavy Artillery { id: 12, health: 100, player: 2, fuel: 15, ammo: [ [ 1, 4 ] ], moved: true, name: 'Heavy L', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 150, player: 2 }, next: { funds: 800, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 
@@ -810,7 +810,7 @@ test('AI does not keep building naval units if the opponent does not have any na
   expect(snapshotGameState(gameStateD)).toMatchInlineSnapshot(`
     "Move (3,3 → 1,3) { fuel: 27, completed: null, path: [2,3 → 1,3], movementExhausted: null }
     AttackUnit (1,3 → 1,2) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 100, ammo: [ [ 1, 4 ] ] }, unitB: DryUnit { health: 66, ammo: [ [ 1, 4 ] ] }, chargeA: 112, chargeB: 340 }
-    CreateUnit (1,1 → 2,1) { unit: Frigate { id: 29, health: 100, player: 2, fuel: 60, ammo: [ [ 1, 8 ] ], moved: true, name: 'Thomas', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,1 → 2,1) { unit: Frigate { id: 29, health: 100, player: 2, fuel: 60, ammo: [ [ 1, 8 ] ], moved: true, name: 'Frigate Z', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 400, player: 2 }, next: { funds: 800, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 });
@@ -1175,12 +1175,12 @@ test('activates skills where the unit ratio does not matter', async () => {
   );
 
   expect(snapshotGameState(gameStateA)).toMatchInlineSnapshot(`
-    "ActivatePower () { skill: 12, units: [1,2 → Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], name: 'Bazoo' }, 2,3 → Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], name: 'Taylor' }], free: null }
+    "ActivatePower () { skill: 12, units: [1,2 → Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], name: 'Bazooka V2' }, 2,3 → Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], name: 'Ally A4' }], free: null }
     AttackUnit (2,3 → 2,2) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 100, ammo: [ [ 1, 4 ] ] }, unitB: null, chargeA: 123, chargeB: 375 }
     AttackUnit (1,2 → 1,1) { hasCounterAttack: false, playerA: 2, playerB: 1, unitA: DryUnit { health: 100, ammo: [ [ 1, 4 ] ] }, unitB: null, chargeA: 246, chargeB: 750 }
     AttackUnit (3,3 → 3,2) { hasCounterAttack: true, playerA: 2, playerB: 1, unitA: DryUnit { health: 89, ammo: [ [ 1, 6 ] ] }, unitB: DryUnit { health: 48, ammo: [ [ 1, 6 ] ] }, chargeA: 351, chargeB: 945 }
-    CreateUnit (1,2 → 2,2) { unit: Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], moved: true, name: 'Jess', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (2,3 → 1,3) { unit: Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], moved: true, name: 'Blair', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,2 → 2,2) { unit: Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], moved: true, name: 'Bazooka I3', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (2,3 → 1,3) { unit: Bazooka Bear { id: 53, health: 100, player: 2, fuel: 100, ammo: [ [ 1, 5 ] ], moved: true, name: 'Bazooka J3', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 300, player: 2 }, next: { funds: 0, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }"
   `);
 });

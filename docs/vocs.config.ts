@@ -7,7 +7,7 @@ const Dunkel = JSON.parse(readFileSync('./node_modules/dunkel-theme/dunkel.json'
 export default defineConfig({
   accentColor: '#c3217f',
   basePath: '/open-source',
-  baseUrl: 'https://athenacrisis.com',
+  baseUrl: 'http://localhost:3003',
   codeHighlight: {
     themes: {
       dark: Dunkel,
@@ -16,10 +16,9 @@ export default defineConfig({
   },
   description: 'Open Source Docs & Playground',
   editLink: {
-    link: 'https://github.com/nkzw-tech/athena-crisis/tree/main/docs/content/pages/:path',
+    link: 'https://github.com/ulukfuni/athena-crisis/tree/main/docs/content/pages/:path',
     text: 'Edit on GitHub',
   },
-  iconUrl: '/favicon.png',
   ogImageUrl: 'https://vocs.dev/api/og?logo=%logo&title=%title&description=%description',
   renderStrategy: 'full-static',
   sidebar: [
@@ -78,33 +77,10 @@ export default defineConfig({
   socials: [
     {
       icon: 'github',
-      link: 'https://github.com/nkzw-tech/athena-crisis',
-    },
-    {
-      icon: 'discord',
-      link: 'https://discord.gg/athenacrisis',
-    },
-    {
-      icon: 'x',
-      link: 'https://twitter.com/TheAthenaCrisis',
+      link: 'https://github.com/ulukfuni/athena-crisis',
     },
   ],
   srcDir: 'content',
-  title: 'Athena Crisis',
-  topNav: [
-    { link: '/core-concepts/overview', match: '/core-concepts', text: 'Docs' },
-    {
-      link: 'https://store.steampowered.com/app/2456430/Athena_Crisis/',
-      text: 'AC on Steam',
-    },
-    {
-      items: [
-        {
-          link: 'https://nakazawa.tech',
-          text: 'Nakazawa Tech',
-        },
-      ],
-      text: 'More',
-    },
-  ],
+  title: 'Turn-Based Strategy Game',
+  topNav: [{ link: '/core-concepts/overview', match: '/core-concepts', text: 'Docs' }],
 });

@@ -16,7 +16,7 @@ import Vector from '@deities/athena/map/Vector.tsx';
 import MapData, { ModifierField } from '@deities/athena/MapData.tsx';
 import { VisionT } from '@deities/athena/Vision.tsx';
 import useVisibilityState from '@nkzw/use-visibility-state';
-import { Tiles0, Tiles1, Tiles2, Tiles3, Tiles4, Tiles5, Tiles6 } from 'athena-crisis:images';
+import { Tiles0, Tiles1, Tiles2, Tiles3, Tiles4, Tiles5, Tiles6 } from 'custom-game:images';
 import { memo, useLayoutEffect, useRef } from 'react';
 import { useSprites } from './hooks/useSprites.tsx';
 import tick, { getFrame, getTick } from './lib/tick.tsx';

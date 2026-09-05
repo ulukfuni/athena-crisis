@@ -10,7 +10,7 @@ import useScrollIntoView from '@deities/ui/hooks/useScrollIntoView.tsx';
 import Link, { LinkProps } from '@deities/ui/Link.tsx';
 import pixelBorder from '@deities/ui/pixelBorder.tsx';
 import { css, cx } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { memo, useCallback, useMemo, useRef } from 'react';
 
 export type ModeSelectButtonProps = Omit<LinkProps, 'color' | 'onClick' | 'to'> &

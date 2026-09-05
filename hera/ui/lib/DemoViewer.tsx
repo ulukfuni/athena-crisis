@@ -8,7 +8,7 @@ export default {
     unitId: Sniper.id,
     variant: 0,
   },
-  displayName: 'Maxima',
+  displayName: 'Sniper N',
   equippedUnitCustomizations: [],
   factionName: 'Atlas',
   id: 'Demo-User-12',

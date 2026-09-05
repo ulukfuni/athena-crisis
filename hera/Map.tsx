@@ -15,7 +15,7 @@ import { RadiusItem } from '@deities/athena/Radius.tsx';
 import { VisionT } from '@deities/athena/Vision.tsx';
 import { css, cx } from '@emotion/css';
 import ImmutableMap from '@nkzw/immutable-map';
-import Images from 'athena-crisis:images';
+import Images from 'custom-game:images';
 // eslint-disable-next-line @deities/no-lazy-import
 import { lazy, memo, ReactElement } from 'react';
 import Building from './Building.tsx';
@@ -362,7 +362,9 @@ const load = () => {
           new Promise((resolve) => {
             const image = new Image();
             imageCache.push(image);
+            // MVP: tolerate missing optional PNGs so the map can still mount.
             image.onload = resolve;
+            image.onerror = resolve;
             image.src = path;
           }),
       ),

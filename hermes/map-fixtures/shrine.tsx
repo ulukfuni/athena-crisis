@@ -46,13 +46,13 @@ export const metadata: MapMetadata = {
           actions: [
             CharacterMessage(
               1,
-              "Hello there! I'm {name}. This is the Prequel Campaign. I was told nothing that happens here has an impact on the crisis. Or.. does it?",
+              "Hello there! I'm {name}. This is a training scenario. Stay sharp and follow orders.",
               'self',
               2,
             ),
             CharacterMessage(
               2,
-              'What are you talking about {1.name}? We are surrounded and you think you got time to break the 4th wall? Bazooks!',
+              'What are you talking about {1.name}? We are surrounded and you think you got time to joke around while we are surrounded?!',
               'self',
             ),
             CharacterMessage(1, 'What!? How did we get overrun by enemies?', 'self', 1),

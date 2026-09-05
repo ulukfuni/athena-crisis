@@ -154,8 +154,8 @@ test('swaps units in a clockwise rotation when entering a teleporter', async () 
     Swap { source: 1,3, sourceUnit: Medic { id: 26, health: 100, player: 1, fuel: 79, moved: true }, target: 5,3, targetUnit: Jeep { id: 6, health: 100, player: 1, fuel: 60, transports: [ { ammo: [ [ 1, 7 ] ], fuel: 39, health: 100, id: 14, moved: true, player: 1 } ] } }
     Move (2,3 → 1,3) { fuel: 39, completed: false, path: [1,3], movementExhausted: false }
     Swap { source: 1,3, sourceUnit: Rocket Launcher { id: 3, health: 100, player: 1, fuel: 39, ammo: [ [ 1, 4 ] ], moved: true }, target: 5,3, targetUnit: Jeep { id: 6, health: 100, player: 1, fuel: 60, transports: [ { ammo: [ [ 1, 7 ] ], fuel: 39, health: 100, id: 14, moved: true, player: 1 }, { fuel: 79, health: 100, id: 26, moved: true, player: 1 } ] } }
-    CreateUnit (2,5 → 3,5) { unit: Saboteur { id: 16, health: 100, player: 1, fuel: 40, moved: true, name: 'Arvid', completed: true }, free: false, skipBehaviorRotation: false }
-    Swap { source: 3,5, sourceUnit: Saboteur { id: 16, health: 100, player: 1, fuel: 40, moved: true, name: 'Arvid', completed: true }, target: 3,1, targetUnit: null }"
+    CreateUnit (2,5 → 3,5) { unit: Saboteur { id: 16, health: 100, player: 1, fuel: 40, moved: true, name: 'Operative P', completed: true }, free: false, skipBehaviorRotation: false }
+    Swap { source: 3,5, sourceUnit: Saboteur { id: 16, health: 100, player: 1, fuel: 40, moved: true, name: 'Operative P', completed: true }, target: 3,1, targetUnit: null }"
   `);
 
   const screenshot = await captureOne(gameState.at(-1)![1], '1');

@@ -1,7 +1,7 @@
 import Vector from '@deities/athena/map/Vector.tsx';
 import syncAnimation from '@deities/ui/lib/syncAnimation.tsx';
 import { css, cx, keyframes } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { memo, useState } from 'react';
 
 export default memo(function Cursor({

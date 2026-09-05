@@ -2,7 +2,7 @@
   "name": "@deities/tests",
   "version": "0.0.1",
   "private": true,
-  "description": "Athena Crisis tests.",
+  "description": "End-to-end tests.",
   "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",

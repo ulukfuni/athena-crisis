@@ -1,6 +1,6 @@
 import SpriteVector from '@deities/athena/map/SpriteVector.tsx';
 import Vector from '@deities/athena/map/Vector.tsx';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { useMemo } from 'react';
 import Animation, { AnimationProps } from './Animation.tsx';
 import generateFrames from './generateFrames.tsx';

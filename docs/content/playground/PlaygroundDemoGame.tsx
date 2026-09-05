@@ -1,30 +1,54 @@
-import convertBiome from '@deities/athena/lib/convertBiome.tsx';
+import { MapMetadata } from '@deities/apollo/MapMetadata.tsx';
+import { Infantry, Pioneer, SmallTank } from '@deities/athena/info/Unit.tsx';
+import withModifiers from '@deities/athena/lib/withModifiers.tsx';
 import { Biome } from '@deities/athena/map/Biome.tsx';
 import { Fog } from '@deities/athena/map/PlainMap.tsx';
-import demo1, { metadata as metadata1 } from '@deities/hermes/map-fixtures/demo-1.tsx';
-import demo2, { metadata as metadata2 } from '@deities/hermes/map-fixtures/demo-2.tsx';
-import randomEntry from '@nkzw/core/randomEntry.js';
+import vec from '@deities/athena/map/vec.tsx';
+import MapData from '@deities/athena/MapData.tsx';
 import PlaygroundGame from './PlaygroundGame.tsx';
 
-const biome =
-  randomEntry([Biome.Grassland, Biome.Desert, Biome.Snow, Biome.Swamp, Biome.Volcano]) ||
-  Biome.Grassland;
+const metadata: MapMetadata = {
+  name: 'MVP Grassland',
+  tags: ['demo', 'mvp'],
+  teamPlay: false,
+};
 
-const [map, metadata] = randomEntry([
-  [demo1, metadata1],
-  [demo1, metadata1],
-  [demo1, metadata1],
-  [demo2, metadata2],
-]) || [demo1, metadata1];
-const currentDemoMap = convertBiome(
-  map.copy({
-    config: map.config.copy({
-      fog: randomEntry([Fog.Standard, Fog.None, Fog.None, Fog.None, Fog.None]) || Fog.None,
-    }),
+// Small grassland map: plain tiles + mountain, infantry/pioneer/tank only.
+const map = withModifiers(
+  MapData.createMap({
+    config: {
+      biome: Biome.Grassland,
+      fog: Fog.None,
+      seedCapital: 500,
+    },
+    map: [
+      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 1,
+      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    ],
+    size: { height: 6, width: 8 },
+    teams: [
+      {
+        id: 1,
+        name: '',
+        players: [{ funds: 500, id: 1, userId: '1' }],
+      },
+      {
+        id: 2,
+        name: '',
+        players: [{ funds: 500, id: 2, name: 'Bot' }],
+      },
+    ],
+    units: [
+      [2, 2, { g: 40, h: 100, i: Infantry.id, p: 1 }],
+      [3, 2, { g: 40, h: 100, i: Pioneer.id, p: 1 }],
+      [2, 5, { g: 30, h: 100, i: SmallTank.id, p: 1 }],
+      [7, 2, { g: 40, h: 100, i: Infantry.id, p: 2 }],
+      [6, 5, { g: 30, h: 100, i: SmallTank.id, p: 2 }],
+      [7, 4, { g: 40, h: 100, i: Pioneer.id, p: 2 }],
+    ],
   }),
-  biome,
 );
 
 export default function PlaygroundDemoGame() {
-  return <PlaygroundGame map={currentDemoMap} metadata={metadata} />;
+  return <PlaygroundGame map={map} metadata={metadata} />;
 }

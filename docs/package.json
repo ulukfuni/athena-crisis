@@ -2,7 +2,7 @@
   "name": "@deities/docs",
   "version": "0.0.1",
   "private": true,
-  "description": "Athena Crisis Open Source Docs & Playground",
+  "description": "Open Source Docs & Playground",
   "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",

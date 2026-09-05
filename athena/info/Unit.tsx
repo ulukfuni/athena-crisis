@@ -1729,7 +1729,7 @@ const DefaultSabotageTypes = new Set([
 export const Pioneer = new UnitInfo(
   UnitID.Pioneer,
   'Pioneer',
-  'Sam',
+  'Scout A',
   'male',
   `Pioneers are an essential utility unit capable of building and capturing structures as well as laying rail tracks. They lack an attack and are therefore vulnerable on the battlefield.`,
   '',
@@ -1764,7 +1764,7 @@ export const Pioneer = new UnitInfo(
 export const Infantry = new UnitInfo(
   UnitID.Infantry,
   'Infantry',
-  'Valentin',
+  'Soldier B',
   'male',
   `Infantry units are standard foot soldiers, capable of capturing buildings. With minimal defense and a standard movement range, it is a balanced yet cheap unit. While Infantry is effective against all other foot soldiers, their ability to defend against stronger units is limited.`,
   '',
@@ -1800,7 +1800,7 @@ export const Infantry = new UnitInfo(
 export const RocketLauncher = new UnitInfo(
   3,
   'Rocket Launcher',
-  'Davide',
+  'Gunner C',
   'male',
   `The Rocket Launcher excels in short-range combat with strong firepower against tanks and other ground units. It is limited by its slow movement and high cost, but is invaluable when defending against a barrage of tanks in your territory.`,
   '',
@@ -1838,7 +1838,7 @@ export const RocketLauncher = new UnitInfo(
 export const APU = new UnitInfo(
   4,
   'APU',
-  'Nora',
+  'Mech D',
   'female',
   `The APU, or Armored Personnel Unit, is a special ground unit with effective firepower against soldiers. Capable of traversing challenging terrains, its versatility in both offense and defense is amplified by its relatively low cost.`,
   '',
@@ -1875,7 +1875,7 @@ export const APU = new UnitInfo(
 export const SmallTank = new UnitInfo(
   5,
   'Small Tank',
-  'Chiara',
+  'Tanker E',
   'female',
   `Built for combat, the Small Tank is moderately expensive but offers good firepower and robust defense against all other ground units. It can move far but has limited visibility in fog and is vulnerable to attacks from most soldiers.`,
   '',
@@ -1918,7 +1918,7 @@ const GroundSupplyTypes = new Set([
 export const Jeep = new UnitInfo(
   UnitID.Jeep,
   'Jeep',
-  'Remy',
+  'Driver F',
   'male',
   `This unit is designed for fast mobility and has the ability to resupply other units. Its defense is low, making it vulnerable to enemy attacks. It can't engage in combat but is essential for logistics and exploration and can transport foot soldiers to the battlefield.`,
   '',
@@ -1960,7 +1960,7 @@ export const Jeep = new UnitInfo(
 export const Artillery = new UnitInfo(
   UnitID.Artillery,
   'Artillery',
-  'Arthur',
+  'Artillery G',
   'male',
   `Artilleries are cost-effective long-range units that have to be positioned in order to attack. Though immobilized while in position, their strikes are particularly lethal against soldiers and light ground forces.`,
   '',
@@ -2002,7 +2002,7 @@ export const Artillery = new UnitInfo(
 export const Battleship = new UnitInfo(
   8,
   'Battleship',
-  'Admiral One',
+  'Admiral H',
   'male',
   `Battleships are the queens of the sea, known for their highly effective long-range attacks. They are among the most expensive units, but when sighted by an opponent, a Battleship often brings disarray to their fleet and requires a strategic adjustment.`,
   '',
@@ -2036,7 +2036,7 @@ export const Battleship = new UnitInfo(
 export const Helicopter = new UnitInfo(
   9,
   'Helicopter',
-  'Jace',
+  'Pilot I',
   'male',
   `Helicopter units are essential for low-altitude air control. They can keep soldiers and other ground units at bay while building up a strong defense. Their high mobility and vision range make them particularly useful for scouting in fog.`,
   '',
@@ -2073,7 +2073,7 @@ export const Helicopter = new UnitInfo(
 export const Humvee = new UnitInfo(
   10,
   'Humvee',
-  'Andrey',
+  'Scout J',
   'male',
   `With their high visibility and large movement range, Humvees are particularly useful for scouting and taking out opposing artillery units. Their high mobility, coupled with their low defense, makes them vulnerable when they cross into enemy territory.`,
   '',
@@ -2114,7 +2114,7 @@ export const Humvee = new UnitInfo(
 export const AntiAir = new UnitInfo(
   11,
   'Anti Air',
-  'Sera',
+  'Defense K',
   'female',
   `Anti Air tanks are the only ground units that are highly effective against all types of air units. They need to be heavily protected by surrounding units due to their weak defense.`,
   '',
@@ -2147,7 +2147,7 @@ export const AntiAir = new UnitInfo(
 export const HeavyArtillery = new UnitInfo(
   UnitID.HeavyArtillery,
   'Heavy Artillery',
-  'Joey',
+  'Heavy L',
   'male',
   `Heavy Artilleries are feared for their large attack range. They deal severe ranged damage, but they are vulnerable to any unit that can get close to them.`,
   '',
@@ -2181,7 +2181,7 @@ export const HeavyArtillery = new UnitInfo(
 export const Lander = new UnitInfo(
   13,
   'Lander',
-  'Masato',
+  'Captain M',
   'male',
   `Landers can transport soldiers across the sea. They are an essential unit for staging an attack on remote islands, but they lack offensive capabilities and need to be protected by other units.`,
   '',
@@ -2218,7 +2218,7 @@ export const Lander = new UnitInfo(
 export const Sniper = new UnitInfo(
   UnitID.Sniper,
   'Sniper',
-  'Maxima',
+  'Sniper N',
   'female',
   `Snipers stand out as the only soldiers capable of long-range attacks. Though costly and requiring positioning to attack, they can make the necessary difference in securing strategic locations.`,
   '',
@@ -2272,7 +2272,7 @@ export const Sniper = new UnitInfo(
 export const Flamethrower = new UnitInfo(
   UnitID.Flamethrower,
   'Flamethrower',
-  'Yuki',
+  'Flame O',
   'unknown',
   `Flamethrowers specialize in close combat, wielding immense firepower effective against soldiers and light ground units. Howeveer, carrying a volatile gas tank on their backs results in low defense and makes them susceptible to attacks.`,
   '',
@@ -2310,7 +2310,7 @@ export const Flamethrower = new UnitInfo(
 export const Saboteur = new UnitInfo(
   UnitID.Saboteur,
   'Saboteur',
-  'Arvid',
+  'Operative P',
   'male',
   `Saboteurs are the most mischievous of all units, capable of sabotaging opposing units and taking away their supplies. They can also rescue neutral units on the battlefield to join their cause. Because they don't carry weapons, they rely on their fists to defend themselves.`,
   '',
@@ -2350,7 +2350,7 @@ export const Saboteur = new UnitInfo(
 export const TransportHelicopter = new UnitInfo(
   17,
   'Transport Chopper',
-  'Charlie',
+  'Airlift Q',
   'male',
   `Transport Helicopters can resupply air units, ensuring that a fleet doesn't run out of supplies and risk crashing. They can also transport up to two soldiers across the battlefield.`,
   '',
@@ -2390,7 +2390,7 @@ export const TransportHelicopter = new UnitInfo(
 export const FighterJet = new UnitInfo(
   UnitID.FighterJet,
   'Fighter Jet',
-  'Titan',
+  'Ace R',
   'unknown',
   `Fighter Jets ensure air superiority with their high mobility and firepower against other air units. While they cannot win a battle alone, lacking Fighter Jets in a fleet means ceding air control to the opponent.`,
   '',
@@ -2432,7 +2432,7 @@ export const FighterJet = new UnitInfo(
 export const Bomber = new UnitInfo(
   UnitID.Bomber,
   'Bomber',
-  'Léon',
+  'Bomber Z2',
   'male',
   `If Fighter Jets are the kings of the air, Bombers are the queens. They can deal massive damage to ground units and buildings but have no defenses against air units.`,
   '',
@@ -2461,7 +2461,7 @@ export const Bomber = new UnitInfo(
 export const Jetpack = new UnitInfo(
   20,
   'Jetpack',
-  'Sora',
+  'Flyer S',
   'male',
   `Jetpacks are a new invention. They can navigate almost all terrain types and are effective against air and ground units. They can capture buildings, but their low fuel supply makes them a risky investment.`,
   '',
@@ -2512,7 +2512,7 @@ export const Jetpack = new UnitInfo(
 export const SeaPatrol = new UnitInfo(
   21,
   'Sea Patrol',
-  'Marika',
+  'Patrol T',
   'female',
   `Low-altitude Sea Patrol units are inexpensive and incredibly useful for securing coastal areas against ships and other low-altitude aircraft. However, their low mobility makes them particularly vulnerable to air attacks, and crash landings on islands are not uncommon.`,
   '',
@@ -2557,7 +2557,7 @@ export const SeaPatrol = new UnitInfo(
 export const AcidBomber = new UnitInfo(
   UnitID.AcidBomber,
   'Acid Bomber',
-  'Ada',
+  'Chemist U',
   'female',
   `Acid Bombers excel in aerial assaults, deploying corrosive bombs that inflict poison damage over time. Their primary weapon, the Corrosive Bomb, can devastate ground and naval units alike. Equipped with Corrosive Air-to-Air Missiles, they can also engage enemy aircraft effectively. However, their chemical payloads are low, which means they have limited ammunition, making resupply crucial for sustained operations.`,
   '',
@@ -2589,7 +2589,7 @@ export const AcidBomber = new UnitInfo(
 export const DroneBomber = new UnitInfo(
   UnitID.DroneBomber,
   'Drone Bomber',
-  'Z.E.R.O.',
+  'Drone A3',
   'unknown',
   `A battleship of the skies? That's what the Drone Bomber is. Equipped with high powered cluster bombs and built with heavy armor, the Drone Bomber is the peregrine falcon of all military aircraft. Unlike the conventional bomber unit, the Drone Bomber can attack from a distance, making it ideal against anti-air units and other heavy armor. The Drone Bomber was commissioned as part of Project Pegasus, a technical marvel in engineering and aviation as it's the first automated military aircraft ever produced.`,
   '',
@@ -2622,7 +2622,7 @@ export const DroneBomber = new UnitInfo(
 export const ReconDrone = new UnitInfo(
   24,
   'Recon Drone',
-  'R.O.D.',
+  'Recon B3',
   'unknown',
   `Unknown`,
   '',
@@ -2651,7 +2651,7 @@ export const ReconDrone = new UnitInfo(
 export const XFighter = new UnitInfo(
   UnitID.XFighter,
   'X-Fighter',
-  'Amira',
+  'Ace V',
   'female',
   `The X-Fighter is a cheap and fast air unit that can attack other air units directly or indirectly. X-Fighters are not strong, but they can lure enemy air units into traps and attack them from a distance.`,
   '',
@@ -2684,7 +2684,7 @@ export const XFighter = new UnitInfo(
 export const Medic = new UnitInfo(
   UnitID.Medic,
   'Medic',
-  'Corrado',
+  'Medic W',
   'male',
   `Medics are essential on a battlefield with constrained resources. They can patch up wounded soldiers right at the frontlines and keep them going long enough to potentially turn the tide of battle.`,
   '',
@@ -2727,7 +2727,7 @@ export const Medic = new UnitInfo(
 export const AmphibiousTank = new UnitInfo(
   27,
   'Amphibious Tank',
-  'Siegfried',
+  'Amphib X',
   'male',
   `Amphibious Tanks are versatile units that can move on both land and water. Their attack power is similar to Small Tanks but they can additionally navigate the sea and deal meaningful damage to ships.`,
   '',
@@ -2760,7 +2760,7 @@ export const AmphibiousTank = new UnitInfo(
 export const Destroyer = new UnitInfo(
   28,
   'Destroyer',
-  'Cohen',
+  'Destroyer Y',
   'male',
   `Destroyers are among the most versatile naval units. Technological advances allow Destroyers to be highly effective against air and ground units, but they are vulnerable to other naval units.`,
   '',
@@ -2793,7 +2793,7 @@ export const Destroyer = new UnitInfo(
 export const Frigate = new UnitInfo(
   29,
   'Frigate',
-  'Thomas',
+  'Frigate Z',
   'male',
   `The Frigate is every naval fleet's workhorse. It's a dual short- and long-range unit that is highly effective against ships. Its lower mobility is countered by its ability to attack from a distance.`,
   '',
@@ -2826,7 +2826,7 @@ export const Frigate = new UnitInfo(
 export const Hovercraft = new UnitInfo(
   30,
   'Hovercraft',
-  'Jygo',
+  'Hover A2',
   'male',
   `Hovercrafts are gigantic barges that can transport up to four ground units across the sea. While they cannot attack, they have entertainment and relaxation facilities on board, which keep their loaded troops in high spirits. This morale boost often enables devastating surprise attacks immediately upon landing on enemy shores.`,
   '',
@@ -2864,7 +2864,7 @@ export const Hovercraft = new UnitInfo(
 export const PatrolShip = new UnitInfo(
   31,
   'Patrol Ship',
-  'Alex',
+  'Patrol B2',
   'female',
   `The Patrol Ship is an amphibious unit capable of capture both on land and at sea. It can help secure an early economic advantage by taking control of Oil Rigs and Shipyards. It is strong against soldiers but weak against other unit types.`,
   '',
@@ -2905,7 +2905,7 @@ const EntityTypesToSupport = new Set([
 export const SupportShip = new UnitInfo(
   32,
   'Support Ship',
-  'Lee',
+  'Support C2',
   'male',
   `The Support Ship can heal and resupply both ground units and ships in its vicinity. While it is not usually seen on the frontlines when a battle commences, it is essential for maintaining supply lines and keeping a fleet in fighting shape.`,
   '',
@@ -2941,7 +2941,7 @@ export const SupportShip = new UnitInfo(
 export const Corvette = new UnitInfo(
   33,
   'Corvette',
-  'Stephanie',
+  'Corvette D2',
   'female',
   `The Corvette is the smallest of ships, but its torpedoes can deal significant damage to other ships. Coupled with its low cost and high mobility, it can be devastating to even the largest of fleets when it catches them off guard.`,
   '',
@@ -2973,7 +2973,7 @@ export const Corvette = new UnitInfo(
 export const Mammoth = new UnitInfo(
   34,
   'Mammoth',
-  'Shamus',
+  'Mammoth E2',
   'male',
   `Unmatched in firepower on the battlefield, the Mammoth is slow but can deal massive damage to distant units. Novel technology enables the Mammoth to move and attack simultaneously, making it extremely dangerous in the hands of a skilled commander.`,
   '',
@@ -3006,7 +3006,7 @@ export const Mammoth = new UnitInfo(
 export const TransportTrain = new UnitInfo(
   35,
   'Transport Train',
-  'Mara',
+  'Conductor F2',
   'female',
   `While primarily a unit for transporting other ground units to the frontlines quickly, the Transport Train also boasts a formidable attack. Coupled with its high defense it can clear a path for loaded troops and protect them.`,
   '',
@@ -3064,7 +3064,7 @@ export const TransportTrain = new UnitInfo(
 export const Dinosaur = new UnitInfo(
   UnitID.Dinosaur,
   'Dinosaur',
-  'Dion',
+  'Beast G2',
   'unknown',
   'A Dinosaur in this day and age?? How did it get here? Do you think it hatched from an Easter Egg?',
   '',
@@ -3102,7 +3102,7 @@ export const Dinosaur = new UnitInfo(
 export const HeavyTank = new UnitInfo(
   37,
   'Heavy Tank',
-  'Marc',
+  'Heavy H2',
   'male',
   `The Heavy Tank strikes a perfect balance between firepower, defense, and mobility. It excels in most head-to-head battles and can withstand significant damage. Armies typically field a few Heavy Tanks to lead charges and break through enemy lines.`,
   '',
@@ -3141,7 +3141,7 @@ export const HeavyTank = new UnitInfo(
 export const SuperTank = new UnitInfo(
   UnitID.SuperTank,
   'Super Tank',
-  'Olaf',
+  'Super I2',
   'male',
   `The Super Tank is among the most powerful units with extremely high firepower and defense. Unfortunately, due to the complexity of their design nobody has figured out how to build new Super Tanks. They can only be acquired by rescuing them on the battlefield.`,
   '',
@@ -3173,7 +3173,7 @@ export const SuperTank = new UnitInfo(
 export const HumveeAvenger = new UnitInfo(
   UnitID.HumveeAvenger,
   'Humvee Avenger',
-  'Stella',
+  'Avenger J2',
   'female',
   `The Humvee Avenger is a fast-moving but rare anti-air unit. Its high speed lets it quickly reposition to defend against opposing air units. While it can't target ground units, it can provide valuable support to other units on the battlefield.`,
   '',
@@ -3239,7 +3239,7 @@ export const ArtilleryHumvee = new UnitInfo(
 export const SupplyTrain = new UnitInfo(
   41,
   'Supply Train',
-  'Joseph',
+  'Supply K2',
   'male',
   `Supply Trains are among the most cost effective units when it comes to attacking other ground units. They are capable of supplying other units on the battlefield and they can help with keeping supply lines open.`,
   '',
@@ -3324,7 +3324,7 @@ export const Truck = new UnitInfo(
 export const Octopus = new UnitInfo(
   UnitID.Octopus,
   'Octopus',
-  'General Buccal',
+  'Octopus L2',
   'unknown',
   `Octopus units are a formidable naval force, known for their tentacle whips that deal significant damage to ships and ground units. Wait, isn't anyone curious why octopi are part of the fleet? They just… exist?`,
   '',
@@ -3361,7 +3361,7 @@ export const Octopus = new UnitInfo(
 export const Dragon = new UnitInfo(
   UnitID.Dragon,
   'Dragon',
-  'Coco',
+  'Dragon M2',
   'unknown',
   `Dragons are kind of like a multiversal Flamethrower unit, if you think about it. Except they can also fly, are huge, and people tend to freeze when they see a Dragon. So, not really like a Flamethrower unit at all. But they do breathe fire!`,
   '',
@@ -3422,7 +3422,7 @@ export const Dragon = new UnitInfo(
 export const Bear = new UnitInfo(
   UnitID.Bear,
   'Bear',
-  'Gloria',
+  'Bear N2',
   'female',
   `This is a Bear, and Bears tend to be huge. Usually found in forests and mountains, they are hunted for their fur and meat. But this Bear is different. It's a unit in a game. So, don't hunt it, just fight it!`,
   '',
@@ -3460,7 +3460,7 @@ export const Bear = new UnitInfo(
 export const Alien = new UnitInfo(
   UnitID.Alien,
   'Alien',
-  'Styx',
+  'Alien O2',
   'unknown',
   `Alien units aren't really that special. They're just like any other soldier, except they come from another dimension. Rumored to possess advanced technology and abilities, and known to travel in spaceships — but other than that, they're just like any other soldier. Really.`,
   '',
@@ -3500,7 +3500,7 @@ export const Alien = new UnitInfo(
 export const Zombie = new UnitInfo(
   UnitID.Zombie,
   'Zombie',
-  'Gharf',
+  'Zombie P2',
   'unknown',
   `Zombies are slow but extremely dangerous. A hit from a Zombie infects the opponent, converting them to the Zombie faction. A Zombie faction? Yes, that's right. They are a formidable faction, and they are coming for all of us.`,
   '',
@@ -3538,7 +3538,7 @@ export const Zombie = new UnitInfo(
 export const Ogre = new UnitInfo(
   UnitID.Ogre,
   'Ogre',
-  'Igor',
+  'Ogre Q2',
   'male',
   `Ogres are from a different world. They are huge, slow, and powerful. They are known to wield clubs and are capable of dealing massive damage to ground units.`,
   '',
@@ -3576,7 +3576,7 @@ export const Ogre = new UnitInfo(
 export const Brute = new UnitInfo(
   UnitID.Brute,
   'Brute',
-  'Blaine',
+  'Brute R2',
   'male',
   `The Brute is a huge, slow-moving unit with a powerful shotgun. Its high defense and attack power make it a force to be reckoned with anywhere on the battlefield. If you see a Brute, you better have a plan to deal with it.`,
   '',
@@ -3615,7 +3615,7 @@ export const Brute = new UnitInfo(
 export const Commander = new UnitInfo(
   UnitID.Commander,
   'Commander',
-  'Kane',
+  'Commander S2',
   'male',
   `Armies are composed of master strategists and troops on the ground executing orders. Then there's the Commander unit, who can neither strategize nor execute effectively. They excel in scheduling unnecessary meetings and perpetuating confusion under the guise of "alignment". Equipped only with a pistol, one has to wonder: What exactly is their purpose?`,
   '',
@@ -3651,7 +3651,7 @@ export const Commander = new UnitInfo(
 export const Cannon = new UnitInfo(
   UnitID.Cannon,
   'Cannon',
-  'Spike',
+  'Cannon T2',
   'male',
   'A prototype unit with a powerful cannon but almost no mobility. Only a limited number of these units were produced before the project was scrapped.',
   '',
@@ -3697,7 +3697,7 @@ export const Cannon = new UnitInfo(
 export const SuperAPU = new UnitInfo(
   UnitID.SuperAPU,
   'Super APU',
-  'Super Blaine',
+  'Super Brute U2',
   'male',
   `The Super APU, the original version of the APU, is equipped with a powerful minigun and has higher defense compared to the regular APU. It can tear through enemy units with ease and requires a concerted effort to be taken down.`,
   '',
@@ -3734,7 +3734,7 @@ export const SuperAPU = new UnitInfo(
 export const BazookaBear = new UnitInfo(
   UnitID.BazookaBear,
   'Bazooka Bear',
-  'Bazoo',
+  'Bazooka V2',
   'unknown',
   `As an all-rounder, the Bazooka Bear can attack every other unit. Its low mobility is compensated by high long-range attack power. Many have asked: Why is it a bear with a bazooka? You'll have to ask the squad leader that question!`,
   '',
@@ -3774,7 +3774,7 @@ export const BazookaBear = new UnitInfo(
 export const AIU = new UnitInfo(
   UnitID.AIU,
   'AIU',
-  'Jaeger',
+  'AIU W2',
   'male',
   `The AIU, or Artificial Intelligence Unit, is a highly advanced robot — possibly sent from another universe — to wreak havoc on the battlefield. It boasts extremely strong defense and is equipped with a powerful minigun.`,
   '',
@@ -3811,7 +3811,7 @@ export const AIU = new UnitInfo(
 export const InfernoJetpack = new UnitInfo(
   UnitID.InfernoJetpack,
   'Inferno Jetpack',
-  'Super Yuki',
+  'Inferno X2',
   'unknown',
   `Flamethrowers that can fly? Inferno Jetpacks are highly mobile and can attack all unit types. They are extremely rare, dangerous, and can only be found in the most intense battles.`,
   '',
@@ -3849,7 +3849,7 @@ export const InfernoJetpack = new UnitInfo(
 export const Scientist = new UnitInfo(
   UnitID.Scientist,
   'Scientist',
-  'Fritz',
+  'Scientist Y2',
   'male',
   `Much like their work, Scientist units are highly specialized. Their goal is to wear down the enemy frontlines from a safe distance. Then another unit can finish the job, and the Scientist can get back to their research.`,
   '',

@@ -1,6 +1,6 @@
 import { SongName, SoundName } from '@deities/athena/info/Music.tsx';
 import parseInteger from '@nkzw/core/parseInteger.js';
-import { Music, Sounds } from 'athena-crisis:audio';
+import { Music, Sounds } from 'custom-game:audio';
 import { Howl, Howler } from 'howler';
 
 export type AudioVolumeType = 'master' | 'music' | 'sound';

@@ -4,7 +4,7 @@ import { AttackSpriteWithVariants, WeaponAnimation } from '@deities/athena/info/
 import { PlayerID } from '@deities/athena/map/Player.tsx';
 import SpriteVector from '@deities/athena/map/SpriteVector.tsx';
 import Vector from '@deities/athena/map/Vector.tsx';
-import { AttackSprites } from 'athena-crisis:images';
+import { AttackSprites } from 'custom-game:images';
 import { CSSProperties } from 'react';
 import attackSpriteHasVariants from '../lib/attackSpriteHasVariants.tsx';
 import Animation, { AnimationDirection, AnimationProps } from './Animation.tsx';

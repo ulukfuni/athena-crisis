@@ -1,7 +1,7 @@
 import { FastAnimationConfig } from '@deities/athena/map/Configuration.tsx';
 import SpriteVector from '@deities/athena/map/SpriteVector.tsx';
 import Vector from '@deities/athena/map/Vector.tsx';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { useCallback } from 'react';
 import { StateToStateLike, UpdateFunction } from '../Types.tsx';
 import Animation, { AnimationProps } from './Animation.tsx';

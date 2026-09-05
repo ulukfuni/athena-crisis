@@ -5,7 +5,7 @@ import AudioPlayer from '@deities/ui/AudioPlayer.tsx';
 import { CSSVariables } from '@deities/ui/cssVar.tsx';
 import { SquarePulseStyle } from '@deities/ui/PulseStyle.tsx';
 import { css, cx, keyframes } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { memo, useEffect, useRef } from 'react';
 import sprite from './lib/sprite.tsx';
 import { NewMapMessageAnimation } from './MapAnimations.tsx';

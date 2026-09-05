@@ -17,7 +17,7 @@ import { applyVar, CSSVariables } from '@deities/ui/cssVar.tsx';
 import syncAnimation from '@deities/ui/lib/syncAnimation.tsx';
 import pixelBorder from '@deities/ui/pixelBorder.tsx';
 import { css, cx, keyframes } from '@emotion/css';
-import { ShadowImages, Sprites } from 'athena-crisis:images';
+import { ShadowImages, Sprites } from 'custom-game:images';
 import { memo, useEffect, useMemo, useRef } from 'react';
 import { AnimationDirection } from './animations/Animation.tsx';
 import Label from './Label.tsx';

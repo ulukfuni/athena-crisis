@@ -2,7 +2,7 @@
   "name": "@deities/codegen",
   "version": "0.0.1",
   "private": true,
-  "description": "Athena Crisis codegen.",
+  "description": "Codegen tooling.",
   "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",

@@ -29,7 +29,7 @@ import { RainbowStyle, SquarePulseStyle } from '@deities/ui/PulseStyle.tsx';
 import { css, cx } from '@emotion/css';
 import groupBy from '@nkzw/core/groupBy.js';
 import Stack, { VStack } from '@nkzw/stack';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { ReactElement, ReactNode, useCallback, useMemo, useRef, useState } from 'react';
 import getTranslatedCrystalName from '../invasions/getTranslatedCrystalName.tsx';
 import getSkillConfigForDisplay from '../lib/getSkillConfigForDisplay.tsx';

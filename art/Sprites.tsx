@@ -2,7 +2,7 @@ import { SpriteVariant } from '@deities/athena/info/SpriteVariants.tsx';
 import { Biome } from '@deities/athena/map/Biome.tsx';
 import { injectGlobal } from '@emotion/css';
 import paletteSwap, { HEX } from '@nkzw/palette-swap';
-import Variants from 'athena-crisis:asset-variants';
+import Variants from 'custom-game:asset-variants';
 import { AssetDomain, AssetVersion } from './AssetInfo.tsx';
 import BiomeVariants from './BiomeVariants.tsx';
 import VariantConfiguration, { SpriteVariantConfiguration } from './VariantConfiguration.tsx';
@@ -30,15 +30,18 @@ const cacheImage = (path: string): [HTMLImageElement, Promise<void>] => {
   const image = new Image();
   imageCache.push(image);
   image.src = path;
-  const promise = new Promise<void>((resolve, reject) => {
+  const promise = new Promise<void>((resolve) => {
     image.onload = () => resolve();
-    image.onerror = (error) => reject(error);
+    // MVP: missing original assets should not block sprite prep.
+    image.onerror = () => resolve();
   });
   return [image, promise];
 };
 
 const getFallbackURL = (name: string) => {
-  const path = `${AssetDomain}/${AssetVersion}/${name}.png`;
+  const path = AssetDomain
+    ? `${AssetDomain}/${AssetVersion}/${name}.png`
+    : `/${AssetVersion}/${name}.png`;
   cacheImage(path);
   return path;
 };
