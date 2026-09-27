@@ -15,7 +15,7 @@ export default function getTranslatedFactionName(playerDetails: PlayerDetails, p
       fbt.enum(toFactionName(player), [
         'Blue Chronos',
         'Cyan Iris',
-        'Dark Athena',
+        'Black Nyx',
         'Green Gaia',
         'Neutral',
         'Orange Helios',

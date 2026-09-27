@@ -1,6 +1,6 @@
 import vec from '@deities/athena/map/vec.tsx';
 import InlineLink from '@deities/ui/InlineLink.tsx';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import Cursor from '../../Cursor.tsx';
 
 export default function DeleteTile({

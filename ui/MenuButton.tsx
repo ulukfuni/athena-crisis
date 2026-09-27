@@ -1,8 +1,9 @@
 import { DoubleSize } from '@deities/athena/map/Configuration.tsx';
 import { css, cx } from '@emotion/css';
 import { motion, MotionStyle } from 'framer-motion';
-import { memo, MouseEvent, ReactNode, RefObject } from 'react';
+import { memo, MouseEvent, ReactNode, RefObject, useRef } from 'react';
 import { BoxStyle } from './Box.tsx';
+import { TooltipPortal } from './Tooltip.tsx';
 
 export default memo(function MenuButton({
   blur = true,
@@ -12,8 +13,10 @@ export default memo(function MenuButton({
   fade = true,
   hide,
   ref,
+  tooltip,
   ...props
 }: {
+  'aria-label'?: string;
   blur?: boolean;
   children?: ReactNode;
   className?: string;
@@ -23,22 +26,33 @@ export default memo(function MenuButton({
   onClick?: (event: MouseEvent) => void;
   ref?: RefObject<HTMLDivElement | null>;
   style?: MotionStyle;
+  tooltip?: string;
 }) {
+  const localRef = useRef<HTMLDivElement | null>(null);
+  const label = tooltip || props['aria-label'];
+
   return (
     <motion.div
       {...props}
       animate={{
         opacity: hide ? 0 : 1,
       }}
+      aria-label={label}
       className={cx(BoxStyle, buttonStyle, blur && blurStyle, className)}
       initial={{ opacity: fade ? 0 : 1 }}
-      ref={ref}
+      ref={(node: HTMLDivElement | null) => {
+        localRef.current = node;
+        if (ref) {
+          ref.current = node;
+        }
+      }}
       transition={{
         delay: delay ? 0.25 : 0,
         duration: 0.4,
       }}
     >
       {children}
+      <TooltipPortal hostRef={localRef} label={tooltip} />
     </motion.div>
   );
 });

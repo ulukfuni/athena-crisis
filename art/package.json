@@ -2,7 +2,7 @@
   "name": "@deities/art",
   "version": "0.0.1",
   "private": true,
-  "description": "Athena Crisis Art.",
+  "description": "Game art tooling.",
   "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",

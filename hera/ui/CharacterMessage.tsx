@@ -12,7 +12,7 @@ import { MenuClassName } from '@deities/ui/Menu.tsx';
 import pixelBorder from '@deities/ui/pixelBorder.tsx';
 import Portal from '@deities/ui/Portal.tsx';
 import { css, cx, keyframes } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { motion } from 'framer-motion';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Portrait, { PortraitWidth } from '../character/Portrait.tsx';

@@ -9,14 +9,6 @@ export type LinkProps = Omit<ComponentProps<typeof Link>, 'to'> & {
 
 export default (process.env.IS_LANDING_PAGE
   ? function Link({ ref, to, ...props }: LinkProps) {
-      return (
-        <a
-          href={`https://app.athenacrisis.com${to}`}
-          ref={ref}
-          rel="noreferrer"
-          target="_blank"
-          {...props}
-        />
-      );
+      return <a href={`${to}`} ref={ref} rel="noreferrer" target="_blank" {...props} />;
     }
   : Link) as FC<LinkProps>;

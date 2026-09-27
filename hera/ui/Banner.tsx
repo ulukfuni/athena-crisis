@@ -7,7 +7,7 @@ import { CSSVariables } from '@deities/ui/cssVar.tsx';
 import gradient from '@deities/ui/gradient.tsx';
 import Portal from '@deities/ui/Portal.tsx';
 import { css, cx, keyframes } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { motion, Variants } from 'framer-motion';
 import { useEffect, useMemo, useState } from 'react';
 import { BannerAnimation, BaseAnimationProps } from '../MapAnimations.tsx';

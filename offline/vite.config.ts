@@ -7,7 +7,7 @@ export default defineConfig({
   define: {
     'process.env.CLIENT_URL':
       process.env.NODE_ENV === 'production'
-        ? '"https://app.athenacrisis.com/"'
+        ? '"http://localhost:3000/"'
         : `"http://${
             execSync(`ifconfig | grep "inet " | grep -v 127.0.0.1`)
               .toString()

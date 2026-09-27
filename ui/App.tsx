@@ -116,7 +116,7 @@ export const App: App = {
   canQuit: !!app,
   canToggleFullScreen: app?.canToggleFullScreen || (() => false),
   downloadURL: app?.downloadURL || ((url: string) => window.open(url)),
-  getCurrentAppVersion: () => navigator.userAgent.match(/AthenaCrisis\/([\w.-]+)/)?.[1] || null,
+  getCurrentAppVersion: () => navigator.userAgent.match(/CustomGame\/([\w.-]+)/)?.[1] || null,
   getInitialURL: app?.getInitialURL || (() => null),
   getLatestAppVersion: () => process.env.NATIVE_APP_VERSION || '',
   getSteamAuthenticationTicket: app?.getSteamAuthenticationTicket || (() => Promise.resolve(null)),

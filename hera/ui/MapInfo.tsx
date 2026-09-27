@@ -8,6 +8,7 @@ import Unit from '@deities/athena/map/Unit.tsx';
 import vec from '@deities/athena/map/vec.tsx';
 import Vector from '@deities/athena/map/Vector.tsx';
 import MapData, { ModifierField, SizeVector } from '@deities/athena/MapData.tsx';
+import { getProgressionAt } from '@deities/athena/progression/registry.tsx';
 import { Visibility, VisionT } from '@deities/athena/Vision.tsx';
 import Box from '@deities/ui/Box.tsx';
 import Breakpoints, { lg } from '@deities/ui/Breakpoints.tsx';
@@ -112,6 +113,7 @@ const renderUnit = (
   tileSize: number,
   animationConfig: AnimationConfig,
   playerDetails: PlayerDetails,
+  position?: Vector | null,
 ) => {
   if (unit) {
     const { info } = unit;
@@ -120,6 +122,7 @@ const renderUnit = (
       [...info.attack.weapons.values()].map((weapon) =>
         weapon.supply ? String(unit.ammo?.get(weapon.id) || 0) + '/' + weapon.supply : '∞',
       );
+    const progression = position ? getProgressionAt(position) : null;
 
     return (
       <Box between blur className={boxStyle}>
@@ -134,7 +137,10 @@ const renderUnit = (
         />
         <div className={textStyle}>
           <Stack between className={cx(ellipsis, overflowStyle)} gap stretch>
-            <div className={ellipsis}>{info.name}</div>
+            <div className={ellipsis}>
+              {info.name}
+              {progression ? ` · Lv${progression.level}` : ''}
+            </div>
             <Stack alignCenter between gap={4}>
               <Icon className={iconStyle} icon={Heart} />
               <div
@@ -158,6 +164,13 @@ const renderUnit = (
               </Stack>
             )}
           </Stack>
+          {progression && (
+            <Stack between className={cx(ellipsis, overflowStyle)} gap>
+              <div className={ellipsis}>
+                XP {progression.xp}/{progression.xp + progression.xpToNext}
+              </div>
+            </Stack>
+          )}
         </div>
       </Box>
     );
@@ -286,6 +299,7 @@ export default memo(function MapInfo({
             tileSize,
             animationConfig,
             playerDetails,
+            position,
           )}
       </div>
     </Tick>

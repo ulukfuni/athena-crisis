@@ -31,7 +31,6 @@ const setTimer = () => {
 };
 
 document.getElementById('box').addEventListener('click', reload);
-document.getElementById('keyart').addEventListener('dragstart', (event) => event.preventDefault());
 
 window.addEventListener('offline', () => {
   clearTimeout(timer);

@@ -6,6 +6,7 @@ import { LeaderStatusEffect, MoraleStatusEffect } from '../map/Configuration.tsx
 import Unit from '../map/Unit.tsx';
 import Vector from '../map/Vector.tsx';
 import MapData from '../MapData.tsx';
+import { getProgressionAttackBonus } from '../progression/registry.tsx';
 
 export default function getAttackStatusEffect(
   map: MapData,
@@ -46,7 +47,8 @@ export default function getAttackStatusEffect(
         buildingEffect +
         unitEffect +
         (unit.isLeader() ? LeaderStatusEffect : 0) +
-        getSkillAttackStatusEffects(unit, tile, player),
+        getSkillAttackStatusEffects(unit, tile, player) +
+        getProgressionAttackBonus(vector),
     ),
     flatDamageEffect,
   ];

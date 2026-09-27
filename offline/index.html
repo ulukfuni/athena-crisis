@@ -12,7 +12,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f2" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
-    <meta content="/keyart.jpg" key="og-image" property="og:image" />
     <meta content="A modern retro turn-based strategy game." key="description" name="description" />
     <meta content="" key="og-url" property="og:url" />
     <meta content="Tactics Game" key="og-title" property="og:title" />
@@ -22,14 +21,7 @@
       property="og:description"
     />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="preload" href="/fonts/AthenaNova.woff2" as="font" crossorigin type="font/woff2" />
     <style type="text/css">
-      @font-face {
-        font-display: swap;
-        font-family: Athena;
-        src: url('/fonts/AthenaNova.woff2');
-      }
-
       * {
         box-sizing: border-box;
       }
@@ -45,7 +37,7 @@
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         color: #111;
-        font-family: Athena, ui-sans-serif, system-ui, sans-serif;
+        font-family: ui-sans-serif, system-ui, sans-serif;
         font-size: 20px;
         font-weight: normal;
         line-height: 1em;
@@ -75,9 +67,8 @@
         position: relative;
       }
 
-      img#keyart {
-        user-select: none;
-        width: 100%;
+      div#splash {
+        min-height: 40vh;
         position: relative;
         z-index: 1;
       }
@@ -172,8 +163,7 @@
   </head>
   <body>
     <div class="background"></div>
-    <div class="relative">
-      <img src="/keyart.jpg" id="keyart" />
+    <div class="relative" id="splash">
       <div id="gradient"></div>
     </div>
     <div id="box">

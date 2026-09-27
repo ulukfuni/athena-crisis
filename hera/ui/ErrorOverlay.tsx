@@ -1,7 +1,6 @@
 import { Route } from '@deities/apollo/Routes.tsx';
 import useAlert from '@deities/ui/hooks/useAlert.tsx';
 import captureException from '@deities/ui/lib/captureException.tsx';
-import { css } from '@emotion/css';
 import Stack from '@nkzw/stack';
 import { fbt } from 'fbtee';
 import { useEffect } from 'react';
@@ -42,8 +41,8 @@ const getAlert = (error: Error) => {
       text: (
         <span>
           <fbt desc="Error message description">
-            There was an error preparing the assets on your platform. For now,
-            please <a href={route}>download the app</a>
+            There was an error preparing the assets on your platform. For now, please{' '}
+            <a href={route}>download the app</a>
             or use Chrome or Safari to play.
           </fbt>
         </span>
@@ -58,13 +57,10 @@ const getAlert = (error: Error) => {
       onAccept: reload,
       preventCancel: true,
       text: (
-        <Stack alignCenter between gap={16} wrap>
-          <Stack between flex1 wrap>
-            <fbt desc="Error message description">
-              The game is currently undergoing maintenance. Please try again later.
-            </fbt>
-          </Stack>
-          <img alt="Maxima" className={pixelatedStyle} src="/Maxima.gif" />
+        <Stack between flex1 wrap>
+          <fbt desc="Error message description">
+            The game is currently undergoing maintenance. Please try again later.
+          </fbt>
         </Stack>
       ),
       title: fbt('Maintenance', 'Error message headline'),
@@ -107,10 +103,3 @@ export default function ErrorOverlay({ error }: { error: unknown }) {
 
   return null;
 }
-
-const pixelatedStyle = css`
-  display: block;
-  image-rendering: pixelated;
-  transform: scaleX(-1);
-  width: 148px;
-`;

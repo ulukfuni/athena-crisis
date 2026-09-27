@@ -70,7 +70,7 @@ const InfoButton = ({
   });
 
   return (
-    <MenuButton className={cx(buttonStyle, !bottom && infoButtonStyle)} fade={fade}>
+    <MenuButton className={cx(buttonStyle, !bottom && infoButtonStyle)} fade={fade} tooltip="Info">
       <Icon
         button
         className={cx(iconStyle)}
@@ -128,7 +128,11 @@ const AttackRadiusButton = ({
   useInput('keyboard:tertiary', show);
 
   return (
-    <MenuButton className={cx(buttonStyle, attackRadiusButtonStyle)} fade={fade}>
+    <MenuButton
+      className={cx(buttonStyle, attackRadiusButtonStyle)}
+      fade={fade}
+      tooltip="Attack Range"
+    >
       <Icon
         button
         className={cx(iconStyle, (!playerCanEndTurn || !fields?.size) && disabledButtonStyle)}
@@ -281,7 +285,7 @@ const NextButton = ({
   );
 
   return (
-    <MenuButton className={cx(buttonStyle, nextButtonStyle)} fade={fade}>
+    <MenuButton className={cx(buttonStyle, nextButtonStyle)} fade={fade} tooltip="Next Unit">
       <Icon
         button
         className={cx(
@@ -297,7 +301,7 @@ const NextButton = ({
 };
 
 const ReplayDownloadButton = ({ fade, onClick }: { fade?: boolean; onClick: () => void }) => (
-  <MenuButton className={cx(buttonStyle, nextButtonStyle)} fade={fade}>
+  <MenuButton className={cx(buttonStyle, nextButtonStyle)} fade={fade} tooltip="Download Replay">
     <Icon button className={cx(iconStyle)} horizontalFlip icon={Download} onClick={onClick} />
   </MenuButton>
 );
@@ -421,26 +425,35 @@ const EndTurnButton = ({
       className={cx(buttonStyle, endTurnButtonStyle, isExpanded && expandStyle)}
       fade={fade}
       ref={ref}
+      tooltip={isExpanded ? undefined : 'End Turn'}
     >
-      <div className={textStyle}>
-        {lastActionResponse?.type !== 'EndTurn' && availableUnits.length ? (
-          <fbt desc="end turn confirmation">
-            Skip
-            <fbt:plural
-              count={availableUnits.length}
-              many="available units"
-              name="number of units"
-              showCount="ifMany"
-            >
-              one available unit
-            </fbt:plural>
-            and end turn?
-          </fbt>
-        ) : (
-          <fbt desc="Confirmation to skip the turn">Do you want to skip this turn?</fbt>
-        )}
+      <div className={expandClipStyle}>
+        <div className={textStyle}>
+          {lastActionResponse?.type !== 'EndTurn' && availableUnits.length ? (
+            <fbt desc="end turn confirmation">
+              Skip
+              <fbt:plural
+                count={availableUnits.length}
+                many="available units"
+                name="number of units"
+                showCount="ifMany"
+              >
+                one available unit
+              </fbt:plural>
+              and end turn?
+            </fbt>
+          ) : (
+            <fbt desc="Confirmation to skip the turn">Do you want to skip this turn?</fbt>
+          )}
+        </div>
+        <Icon
+          aria-label="Close"
+          button
+          className={closeIconStyle}
+          icon={Close}
+          onClick={() => setIsExpanded(false)}
+        />
       </div>
-      <Icon button className={closeIconStyle} icon={Close} onClick={() => setIsExpanded(false)} />
       <Icon
         button
         className={cx(
@@ -511,6 +524,8 @@ const UndoButton = ({
     };
   }, [canUndo, canUndoAction, undo]);
 
+  const undoTooltip = !canUndoAction ? 'Undo Turn' : isExpanded ? 'Undo Action' : 'Undo';
+
   return (
     <MenuButton
       className={cx(
@@ -521,25 +536,29 @@ const UndoButton = ({
       )}
       fade={fade}
       ref={ref}
+      tooltip={undoTooltip}
     >
       {canUndoAction && (
-        <>
+        <div className={expandClipStyle}>
           <Icon
+            aria-label="Close"
             button
             className={cx(iconStyle, undoCloseIconStyle)}
             icon={Close}
             onClick={() => setIsExpanded(false)}
           />
           <Icon
+            aria-label="Undo Turn"
             button
             className={cx(iconStyle, undoTurnIconStyle)}
             horizontalFlip
             icon={Undo}
             onClick={() => undo('Turn')}
           />
-        </>
+        </div>
       )}
       <Icon
+        aria-label={isExpanded ? 'Undo Action' : undefined}
         button
         className={cx(iconStyle, !canUndo && disabledButtonStyle)}
         horizontalFlip
@@ -569,6 +588,7 @@ export const MessageButton = ({
     <MenuButton
       className={cx(buttonStyle, hasUndo ? extraButtonStyle : zoomButtonStyle)}
       onClick={onClick}
+      tooltip="Message"
     >
       <Icon
         button
@@ -779,11 +799,21 @@ const buttonStyle = css`
 
 const endTurnButtonStyle = css`
   color: transparent;
-  overflow: hidden;
   pointer-events: auto;
   transition:
     width 300ms ease,
     color 75ms ease 0ms;
+`;
+
+const expandClipStyle = css`
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+
+  & > * {
+    pointer-events: auto;
+  }
 `;
 
 const nextButtonStyle = css`

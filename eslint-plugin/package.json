@@ -2,7 +2,7 @@
   "name": "@deities/eslint-plugin",
   "version": "0.0.1",
   "private": true,
-  "description": "Athena Crisis eslint plugins.",
+  "description": "ESLint plugins.",
   "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",

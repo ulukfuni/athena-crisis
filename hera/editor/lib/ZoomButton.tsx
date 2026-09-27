@@ -40,6 +40,7 @@ export default function ZoomButton({
       fade={fade}
       hide={hide}
       onClick={updateZoom}
+      tooltip="Zoom"
     >
       <div className={cx(SquareButtonStyle, zoomContainerStyle)}>
         <div className={zoomTextStyle}>{zoom - min + 1}x</div>

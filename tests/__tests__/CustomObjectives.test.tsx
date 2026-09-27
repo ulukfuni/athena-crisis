@@ -3098,7 +3098,7 @@ test('multiple optional objectives have their effects applied correctly', async 
   expect(snapshotEncodedActionResponse(gameActionResponseA)).toMatchInlineSnapshot(`
       "Capture (1,2) { building: House { id: 2, health: 100, player: 1, label: 4 }, player: 2 }
       OptionalObjective { objective: { bonus: undefined, completed: Set(1) { 1 }, hidden: false, label: [ 4 ], optional: true, players: [], reward: null, type: 1 }, objectiveId: 1, toPlayer: 1 }
-      Spawn { units: [1,3 → Flamethrower { id: 15, health: 100, player: 0, fuel: 30, ammo: [ [ 1, 4 ] ], name: 'Uli' }], teams: null, buildings: [] }
+      Spawn { units: [1,3 → Flamethrower { id: 15, health: 100, player: 0, fuel: 30, ammo: [ [ 1, 4 ] ], name: 'Flame K3' }], teams: null, buildings: [] }
       OptionalObjective { objective: { amount: 1, bonus: undefined, completed: Set(1) { 1 }, hidden: false, optional: true, players: [], reward: null, type: 2 }, objectiveId: 2, toPlayer: 1 }"
     `);
 

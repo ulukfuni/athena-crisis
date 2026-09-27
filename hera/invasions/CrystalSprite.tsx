@@ -1,6 +1,6 @@
 import { Crystal } from '@deities/athena/invasions/Crystal.tsx';
 import { css } from '@emotion/css';
-import { Crystals as CrystalImage } from 'athena-crisis:images';
+import { Crystals as CrystalImage } from 'custom-game:images';
 import { memo, useLayoutEffect, useRef, useState } from 'react';
 
 const size = 26;

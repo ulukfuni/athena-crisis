@@ -168,7 +168,7 @@ export default defineConfig({
     'import-x-js/no-unresolved': [
       'error',
       {
-        ignore: [String.raw`\?worker`, 'athena-crisis:*', 'glob', 'virtual:*'],
+        ignore: [String.raw`\?worker`, 'custom-game:*', 'glob', 'virtual:*'],
       },
     ],
     'no-restricted-globals': ['error', 'alert', 'confirm'],

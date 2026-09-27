@@ -5,7 +5,7 @@ import { sm } from '@deities/ui/Breakpoints.tsx';
 import clipBorder from '@deities/ui/clipBorder.tsx';
 import useMedia from '@deities/ui/hooks/useMedia.tsx';
 import { css, cx } from '@emotion/css';
-import { PortraitSilhouettes } from 'athena-crisis:images';
+import { PortraitSilhouettes } from 'custom-game:images';
 import { memo, useLayoutEffect, useRef } from 'react';
 import { useSprites } from '../hooks/useSprites.tsx';
 

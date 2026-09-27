@@ -6,7 +6,7 @@ import vec from '@deities/athena/map/vec.tsx';
 import Vector from '@deities/athena/map/Vector.tsx';
 import { applyVar, CSSVariables } from '@deities/ui/cssVar.tsx';
 import { css, cx, keyframes } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { memo, useEffect, useRef } from 'react';
 import Label from './Label.tsx';
 import getBuildingSpritePosition from './lib/getBuildingSpritePosition.tsx';
@@ -303,7 +303,7 @@ const attackFlashStyle = css`
   }
   50% {
     filter: saturate(0.5);
-    opacity: 0.5;
+    opacity: 1;
   }
   66% {
     ${vars.set('skew', '-2.5deg')}

@@ -4,7 +4,7 @@ showAskAi: false
 
 # Immutable Data Structures
 
-All game related data structures and algorithms in Athena Crisis are "headless" and can run on the client, server, or during build time. Map and game state are represented using [_immutable persistent data structures_](https://roberterdin.github.io/2017/09/immutable-persistent-data-structures). Immutable means that instead of directly changing the game state, any action like moving or attacking a unit returns a new game state object. Persistent refers to reusing all data that doesn't change between two game states. These two concepts together make it easy to keep many game states around, make it fast to check whether changes happened between two states, and is memory efficient.
+All game related data structures and algorithms in the engine are "headless" and can run on the client, server, or during build time. Map and game state are represented using [_immutable persistent data structures_](https://roberterdin.github.io/2017/09/immutable-persistent-data-structures). Immutable means that instead of directly changing the game state, any action like moving or attacking a unit returns a new game state object. Persistent refers to reusing all data that doesn't change between two game states. These two concepts together make it easy to keep many game states around, make it fast to check whether changes happened between two states, and is memory efficient.
 
 Imagine a basic game state with a map that is three fields wide and one field high. The game state can be represented with an array, where each field either has a unit or not:
 
@@ -28,7 +28,7 @@ const state = [unit, null, null];
 const newState = [null, null, unit];
 ```
 
-At the core, instead of mutating the game state, we create a completely new game state object each time with the immutable model. Note that the unit, assuming its an instance of a `Unit` class, did not change. However, when you are moving a unit in Athena Crisis, it has to be marked as "moved". In the imperative version, it might look like this:
+At the core, instead of mutating the game state, we create a completely new game state object each time with the immutable model. Note that the unit, assuming its an instance of a `Unit` class, did not change. However, when you are moving a unit in the engine, it has to be marked as "moved". In the imperative version, it might look like this:
 
 ```tsx
 const state = [unit, null, null];
@@ -57,7 +57,7 @@ The imperative version is faster and memory efficient. However, if another part 
 
 In a real world example, you might be storing unit positions in a [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) data structure which is expensive to copy each time a change is made. The immutable `Map` data structure from [Immutable.js](https://immutable-js.com/), which we released as a standalone package called [`@nkzw/immutable-map`](https://github.com/nkzw-tech/immutable-map), makes use of structural sharing to make copying cheap. It works similar to git commits, where only the changes are stored and the rest is shared between two game states. Due to this, _the immutable model can be more memory efficient and sometimes even faster than the imperative model_.
 
-_These advantages make immutable state models ideal for turn-based strategy games like Athena Crisis._
+_These advantages make immutable state models ideal for turn-based strategy games like the engine._
 
 :::info[Note]
 Immutable.js has fallen out of favor in recent years. Its meta-programming and code size slow down app start, and many of its data structures are less relevant today. However, to our knowledge, there is no better and faster alternative of an immutable `Map` data structures in JavaScript. We published our own package that only includes `Map`, and we are welcome to contributions to speed up the package.

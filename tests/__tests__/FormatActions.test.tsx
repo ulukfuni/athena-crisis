@@ -118,22 +118,22 @@ test('create building and create unit actions', async () => {
     CreateBuilding (5,2) { building: Barracks { id: 12, health: 100, player: 2, completed: true }, free: null }
     Move (4,5 → 2,5) { fuel: 38, completed: null, path: [3,5 → 2,5], movementExhausted: null }
     CreateBuilding (2,5) { building: Barracks { id: 12, health: 100, player: 2, completed: true }, free: null }
-    CreateUnit (5,5 → 5,4) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (5,5 → 5,4) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 9600, player: 2 }, next: { funds: 10000, player: 1 }, round: 2, rotatePlayers: null, supply: null, miss: null }
     CreateBuilding (2,1) { building: Barracks { id: 12, health: 100, player: 1, completed: true }, free: null }
     CreateBuilding (1,2) { building: Barracks { id: 12, health: 100, player: 1, completed: true }, free: null }
-    CreateUnit (1,1 → 2,1) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,1 → 2,1) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 9600, player: 1 }, next: { funds: 9600, player: 2 }, round: 2, rotatePlayers: null, supply: null, miss: null }
     CreateBuilding (5,4) { building: Barracks { id: 12, health: 100, player: 2, completed: true }, free: null }
-    CreateUnit (5,2 → 5,1) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (2,5 → 2,4) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Rick', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (5,5 → 5,4) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Idris', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (5,2 → 5,1) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (2,5 → 2,4) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Scout E3', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (5,5 → 5,4) { unit: Pioneer { id: 1, health: 100, player: 2, fuel: 40, moved: true, name: 'Gunner D3', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 9150, player: 2 }, next: { funds: 9600, player: 1 }, round: 3, rotatePlayers: null, supply: null, miss: null }
     Move (2,1 → 4,1) { fuel: 38, completed: null, path: [3,1 → 4,1], movementExhausted: null }
     CreateBuilding (4,1) { building: Barracks { id: 12, health: 100, player: 1, completed: true }, free: null }
-    CreateUnit (2,1 → 2,2) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (1,2 → 1,3) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Liam', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (1,1 → 2,1) { unit: Infantry { id: 2, health: 100, player: 1, fuel: 50, moved: true, name: 'Valentin', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (2,1 → 2,2) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,2 → 1,3) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Scout F3', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,1 → 2,1) { unit: Infantry { id: 2, health: 100, player: 1, fuel: 50, moved: true, name: 'Soldier B', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 9050, player: 1 }, next: { funds: 9150, player: 2 }, round: 3, rotatePlayers: null, supply: null, miss: null }
     Move (5,4 → 4,5) { fuel: 38, completed: null, path: [4,4 → 4,5], movementExhausted: null }
     CreateBuilding (4,5) { building: Factory { id: 3, health: 100, player: 2, completed: true }, free: null }
@@ -141,7 +141,7 @@ test('create building and create unit actions', async () => {
     Capture (4,1)
     Move (2,4 → 1,4) { fuel: 39, completed: null, path: [1,4], movementExhausted: null }
     CreateBuilding (1,4) { building: Factory { id: 3, health: 100, player: 2, completed: true }, free: null }
-    CreateUnit (5,2 → 4,2) { unit: Infantry { id: 2, health: 100, player: 2, fuel: 50, moved: true, name: 'Valentin', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (5,2 → 4,2) { unit: Infantry { id: 2, health: 100, player: 2, fuel: 50, moved: true, name: 'Soldier B', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 8450, player: 2 }, next: { funds: 9050, player: 1 }, round: 4, rotatePlayers: null, supply: null, miss: null }
     Move (2,1 → 3,2) { fuel: 48, completed: null, path: [3,1 → 3,2], movementExhausted: null }
     AttackUnit (3,2 → 4,2) { hasCounterAttack: true, playerA: 1, playerB: 2, unitA: DryUnit { health: 74 }, unitB: DryUnit { health: 42 }, chargeA: 90, chargeB: 115 }
@@ -156,7 +156,7 @@ test('create building and create unit actions', async () => {
     Capture (1,4) { building: Factory { id: 3, health: 100, player: 1 }, player: 2 }
     Capture (2,5) { building: Barracks { id: 12, health: 100, player: 1 }, player: 2 }
     AttackUnit (3,2 → 4,2) { hasCounterAttack: false, playerA: 1, playerB: 2, unitA: DryUnit { health: 40 }, unitB: null, chargeA: 169, chargeB: 221 }
-    CreateUnit (2,1 → 3,1) { unit: Sniper { id: 14, health: 100, player: 1, fuel: 40, ammo: [ [ 1, 7 ] ], moved: true, name: 'Maxima', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (2,1 → 3,1) { unit: Sniper { id: 14, health: 100, player: 1, fuel: 40, ammo: [ [ 1, 7 ] ], moved: true, name: 'Sniper N', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 8675, player: 1 }, next: { funds: 8450, player: 2 }, round: 5, rotatePlayers: null, supply: null, miss: null }
     Move (4,1 → 5,3) { fuel: 36, completed: null, path: [5,1 → 5,2 → 5,3], movementExhausted: null }
     EndTurn { current: { funds: 8450, player: 2 }, next: { funds: 8675, player: 1 }, round: 6, rotatePlayers: null, supply: null, miss: null }
@@ -180,22 +180,22 @@ test('create building and create unit actions', async () => {
     EndTurn { current: { funds: 9600, player: 2 }, next: { funds: 10000, player: 1 }, round: 2, rotatePlayers: false, supply: null, miss: false }
     CreateBuilding (2,1) { building: Barracks { id: 12, health: 100, player: 1, completed: true }, free: false }
     CreateBuilding (1,2) { building: Barracks { id: 12, health: 100, player: 1, completed: true }, free: false }
-    CreateUnit (1,1 → 2,1) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,1 → 2,1) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 9600, player: 1 }, next: { funds: 9600, player: 2 }, round: 2, rotatePlayers: false, supply: null, miss: false }
     CreateBuilding (5,4) { building: Barracks { id: 12, health: 100, player: 0 }, free: false }
     EndTurn { current: { funds: 9150, player: 2 }, next: { funds: 9600, player: 1 }, round: 3, rotatePlayers: false, supply: null, miss: false }
     Move (2,1 → 4,1) { fuel: 38, completed: false, path: [3,1 → 4,1], movementExhausted: false }
     CreateBuilding (4,1) { building: Barracks { id: 12, health: 100, player: 1, completed: true }, free: false }
-    CreateUnit (2,1 → 2,2) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Sam', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (1,2 → 1,3) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Liam', completed: true }, free: false, skipBehaviorRotation: false }
-    CreateUnit (1,1 → 2,1) { unit: Infantry { id: 2, health: 100, player: 1, fuel: 50, moved: true, name: 'Valentin', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (2,1 → 2,2) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Scout A', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,2 → 1,3) { unit: Pioneer { id: 1, health: 100, player: 1, fuel: 40, moved: true, name: 'Scout F3', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (1,1 → 2,1) { unit: Infantry { id: 2, health: 100, player: 1, fuel: 50, moved: true, name: 'Soldier B', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 9050, player: 1 }, next: { funds: 9150, player: 2 }, round: 3, rotatePlayers: false, supply: null, miss: false }
     CreateBuilding (4,5) { building: Factory { id: 3, health: 100, player: 0 }, free: false }
     Move (5,1 → 4,1) { fuel: 39, completed: false, path: [4,1], movementExhausted: false }
     Capture (4,1)
     Move (2,4 → 1,4) { fuel: 39, completed: false, path: [1,4], movementExhausted: false }
     CreateBuilding (1,4) { building: Factory { id: 3, health: 100, player: 2, completed: true }, free: false }
-    HiddenMove { path: [5,2 → 4,2], completed: false, fuel: null, unit: Infantry { id: 2, health: 100, player: 2, fuel: 50, moved: true, name: 'Valentin', completed: true } }
+    HiddenMove { path: [5,2 → 4,2], completed: false, fuel: null, unit: Infantry { id: 2, health: 100, player: 2, fuel: 50, moved: true, name: 'Soldier B', completed: true } }
     EndTurn { current: { funds: 8450, player: 2 }, next: { funds: 9050, player: 1 }, round: 4, rotatePlayers: false, supply: null, miss: false }
     Move (2,1 → 3,2) { fuel: 48, completed: false, path: [3,1 → 3,2], movementExhausted: false }
     AttackUnit (3,2 → 4,2) { hasCounterAttack: true, playerA: 1, playerB: 2, unitA: DryUnit { health: 74 }, unitB: DryUnit { health: 42 }, chargeA: 90, chargeB: 115 }
@@ -210,7 +210,7 @@ test('create building and create unit actions', async () => {
     Capture (1,4) { building: Factory { id: 3, health: 100, player: 1 }, player: 2 }
     Capture (2,5) { building: Barracks { id: 12, health: 100, player: 1 }, player: 2 }
     AttackUnit (3,2 → 4,2) { hasCounterAttack: false, playerA: 1, playerB: 2, unitA: DryUnit { health: 40 }, unitB: null, chargeA: 169, chargeB: 221 }
-    CreateUnit (2,1 → 3,1) { unit: Sniper { id: 14, health: 100, player: 1, fuel: 40, ammo: [ [ 1, 7 ] ], moved: true, name: 'Maxima', completed: true }, free: false, skipBehaviorRotation: false }
+    CreateUnit (2,1 → 3,1) { unit: Sniper { id: 14, health: 100, player: 1, fuel: 40, ammo: [ [ 1, 7 ] ], moved: true, name: 'Sniper N', completed: true }, free: false, skipBehaviorRotation: false }
     EndTurn { current: { funds: 8675, player: 1 }, next: { funds: 8450, player: 2 }, round: 5, rotatePlayers: false, supply: null, miss: false }
     HiddenMove { path: [4,1 → 5,1 → 5,2 → 5,3], completed: false, fuel: 36, unit: null }
     EndTurn { current: { funds: 8450, player: 2 }, next: { funds: 8675, player: 1 }, round: 6, rotatePlayers: false, supply: null, miss: false }

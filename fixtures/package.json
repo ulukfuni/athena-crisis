@@ -2,7 +2,7 @@
   "name": "@deities/fixtures",
   "version": "0.0.1",
   "private": true,
-  "description": "Athena Crisis fixtures.",
+  "description": "Test fixtures.",
   "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",

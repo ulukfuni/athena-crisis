@@ -6,9 +6,9 @@ import ClientComponent from '../../playground/ClientComponent.tsx';
 
 # Game Components
 
-The Athena Crisis renderer was written for fun in JavaScript and CSS from scratch without experience in building game engines. It then ended up being a real game. _Oops._ Anyway, it's been fun to push web technologies to the max and optimize every detail, so let's explore some of the core components!
+The the engine renderer was written for fun in JavaScript and CSS from scratch without experience in building game engines. It then ended up being a real game. _Oops._ Anyway, it's been fun to push web technologies to the max and optimize every detail, so let's explore some of the core components!
 
-Most of the UI and game rendering can be found in the [`hera`](https://github.com/nkzw-tech/athena-crisis/tree/main/hera) top level folder. Athena Crisis renders almost the entire game using just plain React, DOM and CSS. Only the map tiles, fog and decorations are using a `canvas` Element. Even then, all three are rendered using different `canvas` elements that are laid on top of each other. The entry point to render a map is the [`Map`](https://github.com/nkzw-tech/athena-crisis/tree/main/hera/Map.tsx) component.
+Most of the UI and game rendering can be found in the [`hera`](https://github.com/nkzw-tech/athena-crisis/tree/main/hera) top level folder. the engine renders almost the entire game using just plain React, DOM and CSS. Only the map tiles, fog and decorations are using a `canvas` Element. Even then, all three are rendered using different `canvas` elements that are laid on top of each other. The entry point to render a map is the [`Map`](https://github.com/nkzw-tech/athena-crisis/tree/main/hera/Map.tsx) component.
 
 ## Tiles, Fog and Decorations
 

@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
-@font-face {
-  font-display: swap;
-  font-family: Athena;
-  src: url('/fonts/AthenaNova.woff2');
-}
-
 :root {
   --vocs-font-family-mono:
     'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',

@@ -4,9 +4,9 @@ import type { Plugin } from 'vite';
 import root from './root.ts';
 
 const mappings = new Map([
-  ['athena-crisis:audio', join(root, 'ui/Audio')],
-  ['athena-crisis:asset-variants', join(root, 'art/Variants')],
-  ['athena-crisis:images', join(root, 'hera/render/Images')],
+  ['custom-game:audio', join(root, 'ui/Audio')],
+  ['custom-game:asset-variants', join(root, 'art/Variants')],
+  ['custom-game:images', join(root, 'hera/render/Images')],
 ] as const);
 
 export default function createResolver({ forceRemoteAudio } = { forceRemoteAudio: false }): Plugin {
@@ -15,20 +15,20 @@ export default function createResolver({ forceRemoteAudio } = { forceRemoteAudio
     name: 'athena-crisis-resolver',
     resolveId: {
       filter: {
-        id: /^athena-crisis:(audio|asset-variants|images)$/,
+        id: /^custom-game:(audio|asset-variants|images)$/,
       },
       handler(id: string) {
         if (
-          id === 'athena-crisis:audio' ||
-          id === 'athena-crisis:asset-variants' ||
-          id === 'athena-crisis:images'
+          id === 'custom-game:audio' ||
+          id === 'custom-game:asset-variants' ||
+          id === 'custom-game:images'
         ) {
           const path = mappings.get(id);
           if (!path) {
             return null;
           }
 
-          if (forceRemoteAudio && id === 'athena-crisis:audio') {
+          if (forceRemoteAudio && id === 'custom-game:audio') {
             return `${path}.tsx`;
           }
 

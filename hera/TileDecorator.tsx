@@ -4,7 +4,7 @@ import SpriteVector from '@deities/athena/map/SpriteVector.tsx';
 import vec from '@deities/athena/map/vec.tsx';
 import Vector from '@deities/athena/map/Vector.tsx';
 import { css, cx } from '@emotion/css';
-import { Sprites } from 'athena-crisis:images';
+import { Sprites } from 'custom-game:images';
 import { memo } from 'react';
 import Tick from './Tick.tsx';
 

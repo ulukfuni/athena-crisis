@@ -1,5 +1,5 @@
 import { Mountain } from '@deities/athena/info/Tile.tsx';
-import { Flamethrower, Infantry } from '@deities/athena/info/Unit.tsx';
+import { Infantry, Pioneer, SmallTank } from '@deities/athena/info/Unit.tsx';
 import withModifiers from '@deities/athena/lib/withModifiers.tsx';
 import vec from '@deities/athena/map/vec.tsx';
 import MapData from '@deities/athena/MapData.tsx';
@@ -30,7 +30,11 @@ const mapA = withModifiers(
 
 // [!region mapB]
 const mapB = mapA.copy({
-  units: mapA.units.set(vec(2, 1), Flamethrower.create(1)).set(vec(3, 3), Infantry.create(2)),
+  units: mapA.units
+    .set(vec(1, 1), Infantry.create(1))
+    .set(vec(3, 1), Pioneer.create(1))
+    .set(vec(2, 3), SmallTank.create(2))
+    .set(vec(3, 3), Infantry.create(2)),
 });
 // [!endregion mapB]
 
